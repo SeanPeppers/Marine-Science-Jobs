@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marine Science Jobs</title>
+<style>
+  :root { --fg:#13202b; --muted:#4a5a66; --bg:#f7fafc; --card:#fff; --accent:#0b5e86; --line:#d5dee5; --err:#9b1c1c; --new:#0a6b3c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e6edf2; --muted:#a9b8c3; --bg:#0f171d; --card:#16222b; --accent:#6cc4ef; --line:#2b3a45; --err:#ffb4b4; --new:#7ee2a8; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.5 system-ui, sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:1100px; margin:0 auto; padding:16px; }
+  h1 { margin:.2em 0 .6em; font-size:1.6rem; }
+  form, #keys { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px; display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); }
+  label { font-weight:600; display:block; }
+  input[type=text], input[type=file], input[type=password] { width:100%; padding:8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); font:inherit; }
+  input[type=range] { width:100%; }
+  .hint { color:var(--muted); font-size:.9rem; font-weight:400; }
+  .actions { display:flex; gap:8px; flex-wrap:wrap; align-items:end; }
+  button { font:inherit; padding:8px 14px; border-radius:6px; border:1px solid var(--accent); background:var(--accent); color:var(--bg); cursor:pointer; }
+  button.secondary { background:transparent; color:var(--accent); }
+  button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  [role=alert] { color:var(--err); border:1px solid var(--err); border-radius:6px; padding:8px 12px; margin:12px 0; }
+  [role=alert]:empty { display:none; }
+  #status { color:var(--muted); margin:12px 0; }
+  h2 { font-size:1.15rem; margin:1.4em 0 .4em; }
+  .table-wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; background:var(--card); }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:.9rem; color:var(--muted); }
+  .badge { display:inline-block; font-size:.75rem; font-weight:700; padding:0 6px; border-radius:4px; border:1px solid currentColor; margin-left:4px; }
+  .badge.new { color:var(--new); }
+  a { color:var(--accent); }
+  details { margin-top:16px; }
+  summary { cursor:pointer; font-weight:600; }
+  footer { color:var(--muted); font-size:.9rem; margin:24px 0; }
+  @media (max-width:640px) {
+    thead { display:none; }
+    tr { display:block; border-bottom:2px solid var(--line); padding:6px 0; }
+    td { display:block; border:0; padding:2px 8px; }
+    td[data-label]::before { content:attr(data-label) ": "; color:var(--muted); font-size:.85rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Marine Science Jobs</h1>
+  <form id="search">
+    <div>
+      <label for="resume">Resume (PDF) <span class="hint">optional, read in memory only</span></label>
+      <input type="file" id="resume" name="resume" accept=".pdf,application/pdf">
+    </div>
+    <div>
+      <label for="city">City <span class="hint">leave blank for anywhere</span></label>
+      <input type="text" id="city" list="city-list" autocomplete="off" placeholder="Tampa, FL, US">
+      <datalist id="city-list"></datalist>
+    </div>
+    <div>
+      <label for="radius">Radius: <output id="radius-out" for="radius">100</output> mi</label>
+      <input type="range" id="radius" name="radius_miles" min="5" max="500" step="5" value="100">
+    </div>
+    <div>
+      <label for="min-score">Minimum match: <output id="min-out" for="min-score">0</output>%</label>
+      <input type="range" id="min-score" name="min_score" min="0" max="100" step="5" value="0">
+      <span class="hint">applies only with a resume</span>
+    </div>
+    <div>
+      <label><input type="checkbox" id="remote" checked> Include remote jobs</label>
+    </div>
+    <div class="actions">
+      <button type="submit">Find jobs</button>
+      <button type="button" class="secondary" id="refresh">Refresh data</button>
+    </div>
+  </form>
+
+  <details id="keys-panel">
+    <summary>API keys (optional extra sources)</summary>
+    <p class="hint">Stored in <code>.env</code> in the repo folder, never committed. Leave a field blank to keep its current value.</p>
+    <form id="keys"></form>
+  </details>
+
+  <div id="error" role="alert"></div>
+  <p id="status" aria-live="polite"></p>
+  <div id="results"></div>
+
+  <footer>
+    <p id="credits">Locations: <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a>, CC-BY 4.0.</p>
+  </footer>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const cities = new Map();
+let prevSeen = new Set();
+try { prevSeen = new Set(JSON.parse(localStorage.getItem("seenIds") || "[]")); } catch { /* storage unavailable */ }
+
+function showError(msg) { $("error").textContent = msg || ""; }
+
+async function api(url, opts) {
+  const resp = await fetch(url, opts);
+  const body = await resp.json().catch(() => ({}));
+  if (!resp.ok) {
+    const d = body.detail;
+    throw new Error(typeof d === "string" ? d : Array.isArray(d) ? d.map((e) => e.msg).join("; ") : `Request failed (${resp.status})`);
+  }
+  return body;
+}
+
+$("radius").oninput = (e) => { $("radius-out").textContent = e.target.value; };
+$("min-score").oninput = (e) => { $("min-out").textContent = e.target.value; };
+
+let cityTimer;
+$("city").addEventListener("input", (e) => {
+  clearTimeout(cityTimer);
+  const q = e.target.value.trim();
+  if (q.length < 2 || cities.has(q)) return;
+  cityTimer = setTimeout(async () => {
+    try {
+      const list = await api(`/api/cities?q=${encodeURIComponent(q)}`);
+      const dl = $("city-list");
+      dl.replaceChildren(...list.map((c) => { cities.set(c.label, c); const o = document.createElement("option"); o.value = c.label; return o; }));
+    } catch (err) { showError(err.message); }
+  }, 200);
+});
+
+function cell(row, label, content) {
+  const td = document.createElement("td");
+  td.dataset.label = label;
+  if (content instanceof Node) td.append(content); else td.textContent = content ?? "";
+  row.append(td);
+  return td;
+}
+
+function badge(text, cls) {
+  const s = document.createElement("span");
+  s.className = `badge ${cls}`;
+  s.textContent = text;
+  return s;
+}
+
+function render(data) {
+  const out = $("results");
+  out.replaceChildren();
+  const byDay = new Map();
+  for (const j of data.jobs) {
+    if (!byDay.has(j.posted)) byDay.set(j.posted, []);
+    byDay.get(j.posted).push(j);
+  }
+  for (const [day, jobs] of byDay) {
+    const h = document.createElement("h2");
+    h.textContent = day || "Date unknown";
+    const wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    const table = document.createElement("table");
+    table.innerHTML = "<thead><tr><th scope='col'>Company</th><th scope='col'>Role</th><th scope='col'>Location</th><th scope='col'>Subfield</th><th scope='col'>Tags</th><th scope='col'>Match %</th><th scope='col'>Apply</th></tr></thead>";
+    const tbody = document.createElement("tbody");
+    for (const j of jobs) {
+      const tr = document.createElement("tr");
+      cell(tr, "Company", j.company);
+      const role = cell(tr, "Role", j.title);
+      if (prevSeen.size && !prevSeen.has(j.id)) role.append(badge("New", "new"));
+      let loc = j.remote ? `${j.location || ""} (remote)`.trim() : j.location;
+      if (j.distance_miles != null) loc += ` · ${j.distance_miles} mi`;
+      const locTd = cell(tr, "Location", loc);
+      if (j.location_unknown) locTd.append(badge("location unknown", ""));
+      cell(tr, "Subfield", j.subfield || "");
+      cell(tr, "Tags", (j.tags || []).join(", "));
+      cell(tr, "Match", j.score == null ? "–" : `${Math.round(j.score)}%`);
+      let link = "";
+      if (/^https?:\/\//i.test(j.url)) {
+        link = document.createElement("a");
+        link.href = j.url; link.target = "_blank"; link.rel = "noopener";
+        link.textContent = "Apply";
+        link.setAttribute("aria-label", `Apply: ${j.title} at ${j.company} (opens new tab)`);
+      }
+      cell(tr, "Apply", link);
+      tbody.append(tr);
+    }
+    table.append(tbody);
+    wrap.append(table);
+    out.append(h, wrap);
+  }
+  $("status").textContent = `${data.jobs.length} job${data.jobs.length === 1 ? "" : "s"}${data.scored ? ", ranked by resume match" : ""}.`;
+  const credits = $("credits");
+  credits.replaceChildren(...data.attributions.map((a) => { const p = document.createElement("span"); p.textContent = a; return p; }).flatMap((s, i) => i ? [document.createElement("br"), s] : [s]));
+  try {
+    const seen = new Set([...prevSeen, ...data.jobs.map((j) => j.id)]);
+    localStorage.setItem("seenIds", JSON.stringify([...seen]));
+  } catch { /* storage unavailable */ }
+}
+
+$("search").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  showError("");
+  const fd = new FormData();
+  const file = $("resume").files[0];
+  if (file) fd.append("resume", file);
+  const cityText = $("city").value.trim();
+  if (cityText) {
+    const c = cities.get(cityText);
+    if (!c) { showError("Pick a city from the suggestions list, or leave City blank."); $("city").focus(); return; }
+    fd.append("lat", c.lat); fd.append("lon", c.lon);
+  }
+  fd.append("radius_miles", $("radius").value);
+  fd.append("min_score", $("min-score").value);
+  fd.append("include_remote", $("remote").checked ? "true" : "false");
+  $("status").textContent = "Searching…";
+  try { render(await api("/api/jobs", { method: "POST", body: fd })); }
+  catch (err) { $("status").textContent = ""; showError(err.message); }
+});
+
+$("refresh").addEventListener("click", async () => {
+  showError("");
+  $("status").textContent = "Pulling latest data…";
+  try {
+    const r = await api("/api/refresh", { method: "POST" });
+    if (r.ok) $("status").textContent = `Data updated. ${r.message}`;
+    else { $("status").textContent = ""; showError(`Refresh failed: ${r.message}`); }
+  } catch (err) { $("status").textContent = ""; showError(err.message); }
+});
+
+function renderKeys(sources) {
+  const form = $("keys");
+  form.replaceChildren();
+  for (const s of sources) {
+    for (const v of s.env_vars) {
+      const div = document.createElement("div");
+      const label = document.createElement("label");
+      label.htmlFor = `key-${v.name}`;
+      label.textContent = `${s.source}: ${v.name} `;
+      label.append(badge(v.set ? "set" : "not set", v.set ? "new" : ""));
+      const input = document.createElement("input");
+      input.type = "password"; input.id = `key-${v.name}`; input.name = v.name; input.autocomplete = "off";
+      const a = document.createElement("a");
+      a.href = s.signup_url; a.target = "_blank"; a.rel = "noopener"; a.className = "hint";
+      a.textContent = "Get a free key";
+      div.append(label, input, a);
+      form.append(div);
+    }
+  }
+  const actions = document.createElement("div");
+  actions.className = "actions";
+  const btn = document.createElement("button");
+  btn.type = "submit"; btn.textContent = "Save keys";
+  actions.append(btn);
+  form.append(actions);
+}
+
+$("keys").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  showError("");
+  const values = {};
+  for (const input of e.target.querySelectorAll("input")) if (input.value.trim()) values[input.name] = input.value.trim();
+  try {
+    renderKeys(await api("/api/keys", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) }));
+    $("status").textContent = "Keys saved.";
+  } catch (err) { showError(err.message); }
+});
+
+api("/api/keys").then(renderKeys).catch((err) => showError(err.message));
+</script>
+</body>
+</html>

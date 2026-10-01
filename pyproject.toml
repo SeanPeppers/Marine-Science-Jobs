@@ -1,0 +1,32 @@
+[project]
+name = "marine-jobs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.142.2",
+    "feedparser>=6.0.14",
+    "httpx>=0.28.1",
+    "pypdf>=6.19.0",
+    "python-multipart>=0.0.32",
+    "pyyaml>=6.0.3",
+    "rapidfuzz>=3.14.6",
+    "scikit-learn>=1.9.1",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+marine-jobs = "marine_jobs:main"
+
+[build-system]
+requires = ["uv_build>=0.9.30,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+    "types-pyyaml>=6.0.12.20260906",
+]

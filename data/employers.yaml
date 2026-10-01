@@ -1,0 +1,24 @@
+# Employers polled by src/marine_jobs/sources/ats.py. A list of mappings:
+#   name:   display name used as Job.company
+#   ats:    greenhouse | lever | ashby | smartrecruiters | workday
+#   slug:   board/company slug in the ATS URL (not used for workday)
+#   host:   workday only, e.g. whoi.wd5.myworkdayjobs.com
+#   tenant: workday only
+#   site:   workday only (career site name)
+#   marine: true when every opening is ocean-related (skips the keyword relevance filter)
+- {name: OceanX, marine: true, ats: greenhouse, slug: oceanx}
+- {name: Planet Labs, ats: greenhouse, slug: planetlabs}
+- {name: Spire, ats: greenhouse, slug: spire}
+- {name: Global Fishing Watch, marine: true, ats: greenhouse, slug: globalfishingwatch}
+- {name: Sofar Ocean, marine: true, ats: ashby, slug: sofarocean}
+- {name: Lindblad Expeditions, ats: lever, slug: lindblad-expeditions}
+- {name: WHOI, marine: true, ats: workday, host: whoi.wd5.myworkdayjobs.com, tenant: whoi, site: WHOI-External}
+- {name: Environmental Science Associates, ats: greenhouse, slug: environmentalscienceassociates}
+- {name: Ramboll, ats: smartrecruiters, slug: Ramboll3}
+- {name: ERM, ats: workday, host: erm.wd3.myworkdayjobs.com, tenant: erm, site: ERM_Careers}
+- {name: Fugro, ats: workday, host: fugro.wd3.myworkdayjobs.com, tenant: fugro, site: Careers}
+- {name: Pew Charitable Trusts, ats: workday, host: pewtrusts.wd5.myworkdayjobs.com, tenant: pewtrusts, site: TrustsExternal}
+- {name: ICF, ats: workday, host: icf.wd5.myworkdayjobs.com, tenant: icf, site: ICFExternal_Career_Site}
+# Not pollable yet (no collector for their ATS): Ocean Infinity (workable ocean-infinity),
+# Terradepth (Paylocity), Georgia Aquarium (UltiPro), Geosyntec (iCIMS),
+# CSA Ocean Sciences and Atlantic Sapphire (ADP Workforce Now).
