@@ -38,33 +38,39 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 <!-- JOBS:START -->
 | Company | Role | Location | Subfield | Tags | Apply | Posted |
 |---|---|---|---|---|---|---|
-| Fugro | Satellite Positioning Support Specialist - Marine | Houston, Texas | marine data & GIS |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Satellite-Positioning-Support-Specialist---Marine_R0031921) | 2026-10-04 |
-| Fugro | Technical Superintendent - Marine | Rio das Ostras, Brazil | other |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Rio-das-Ostras-Brazil/Technical-Superintendent---Marine_R0028858) | 2026-10-04 |
-| Fugro | Project Accountant - Marine | Houston, Texas | other |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Project-Accountant---Marine_R0031662) | 2026-10-04 |
-| Fugro | MARINE SURVEY DATA SPECIALIST – STUDENT INTERNSHIP 2026 (OFFICE BASED) | Kuala Lumpur, Malaysia | marine data & GIS |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Kuala-Lumpur-Malaysia/MARINE-SURVEY-DATA-SPECIALIST---STUDENT-INTERNSHIP-2026--OFFICE-BASED-_R0032049-1) | 2026-10-04 |
-| Fugro | Marine Technician I - Marine | Lafayette, Louisiana | other |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Lafayette-Louisiana/Marine-Technician-I---Marine_R0032039) | 2026-10-04 |
-| Fugro | MARINE SURVEY GEOPHYSICIST – STUDENT INTERNSHIP 2026 (OFFICE-BASED) | Kuala Lumpur, Malaysia | environmental consulting |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Kuala-Lumpur-Malaysia/MARINE-SURVEY-GEOPHYSICIST---STUDENT-INTERNSHIP-2026--OFFICE-BASED-_R0032048) | 2026-10-04 |
-| Estrie Marine | marine engineering mechanic | Sherbrooke (QC) | ocean engineering & technology |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50419178) | 2026-10-03 |
-| Estrie Marine | tanker pumper - ship | Sherbrooke (QC) | other |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50419116) | 2026-10-03 |
-| Estrie Marine | motorcycle mechanic | Sherbrooke (QC) | other |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50419341) | 2026-10-03 |
+| Desgagnés Marine Pétro | second engineer | Québec (QC) | ocean engineering & technology |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50436105) | 2026-10-06 |
+| Fugro | Satellite Positioning Support Specialist - Marine | Houston, Texas | marine data & GIS |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Satellite-Positioning-Support-Specialist---Marine_R0031921) | 2026-10-06 |
+| Fugro | Technical Superintendent - Marine | Rio das Ostras, Brazil | other |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Rio-das-Ostras-Brazil/Technical-Superintendent---Marine_R0028858) | 2026-10-06 |
+| Fugro | Project Accountant - Marine | Houston, Texas | other |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Project-Accountant---Marine_R0031662) | 2026-10-06 |
+| Fugro | Marine Technician I - Marine | Lafayette, Louisiana | other |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Lafayette-Louisiana/Marine-Technician-I---Marine_R0032039) | 2026-10-06 |
+| Sofar Ocean | APAC Routing Specialist (Night Shift) | India | marine data & GIS |  | [Apply](https://jobs.ashbyhq.com/sofarocean/fbcc5255-48fd-48cc-9918-1c8edcc520ce) | 2026-10-06 |
+| ICF | Fisheries Biologist (On-Call) | Richmond, CA | marine biology |  | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Richmond-CA/Fisheries-Biologist--On-Call-_R2603251) | 2026-10-05 |
+| Cold Ocean Salmon Inc. | aquaculture worker | Hermitage (NL) | aquaculture |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50424894) | 2026-10-05 |
+| Environmental Science Associates | Archaeological Field Technician (On-Call; Reno and Las Vegas, Nevada) | Nevada, United States | environmental consulting |  | [Apply](https://job-boards.greenhouse.io/environmentalscienceassociates/jobs/5387836008) | 2026-10-05 |
+| Cooke Aquaculture Inc. | hatchery worker - aquaculture | Bonny River (NB) Pennfield (NB) Oak Haven (NB) Elmsville (NB) | aquaculture |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50435195) | 2026-10-05 |
+| City of Calgary | marine systems engineer | Calgary (AB) | ocean engineering & technology |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50428376) | 2026-10-05 |
+| Fugro | MARINE SURVEY DATA SPECIALIST – STUDENT INTERNSHIP 2026 (OFFICE BASED) | Kuala Lumpur, Malaysia | marine data & GIS |  | 🔒 | 2026-10-04 |
+| Fugro | MARINE SURVEY GEOPHYSICIST – STUDENT INTERNSHIP 2026 (OFFICE-BASED) | Kuala Lumpur, Malaysia | environmental consulting |  | 🔒 | 2026-10-04 |
+| Estrie Marine | marine engineering mechanic | Sherbrooke (QC) | ocean engineering & technology |  | 🔒 | 2026-10-03 |
+| Estrie Marine | tanker pumper - ship | Sherbrooke (QC) | other |  | 🔒 | 2026-10-03 |
+| Estrie Marine | motorcycle mechanic | Sherbrooke (QC) | other |  | 🔒 | 2026-10-03 |
 | Desgagnés Marine St-Laurent inc. | marine engineer officer | Québec (QC) | ocean engineering & technology |  | 🔒 | 2026-10-02 |
-| Cooke Aquaculture Inc. | aquaculture technician | Saint John (NB) | aquaculture |  | [Apply](https://www.jobbank.gc.ca/jobsearch/jobposting/50415148) | 2026-10-02 |
+| Cooke Aquaculture Inc. | aquaculture technician | Saint John (NB) | aquaculture |  | 🔒 | 2026-10-02 |
 | Desgagnés Marine St-Laurent inc. | second engineer | Québec (QC) | ocean engineering & technology |  | 🔒 | 2026-10-02 |
 | Fugro | Survey Technologist - Marine | St. John's, Canada | environmental consulting |  | 🔒 | 2026-10-01 |
+| The School for Field Studies | Lecturer in Tropical Marine Ecology |  | marine biology |  | [Apply](https://www.conservationjobboard.com/job-listing-lecturer-in-tropical-marine-ecology-south-caicos-other/5201074496) | 2026-10-01 |
 | Cooke Aquaculture Inc. | aquaculture worker | Hermitage (NL) | aquaculture |  | 🔒 | 2026-09-30 |
 | Western EcoSystems Technology ULC | Intermediate Wetland Ecologist - (1998) |  | coastal & estuarine ecology |  | [Apply](https://www.conservationjobboard.com/job-listing-intermediate-wetland-ecologist---1998-alberta-canada/2835634109) | 2026-09-30 |
 | W & R Fisheries Ltd | aquaculture worker | Georgetown (PE) | aquaculture |  | 🔒 | 2026-09-29 |
 | Cooke Aquaculture Inc. | industrial electrician | St. George (NB) | aquaculture |  | 🔒 | 2026-09-28 |
 | WHOI | Research Assistant I/II | Fye Laboratory | other |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Fye-Laboratory/Research-Assistant-I-II_JR100640) | 2026-09-28 |
-| Environmental Science Associates | Archaeological Field Technician (On-Call; Reno and Las Vegas, Nevada) | Nevada, United States | environmental consulting |  | [Apply](https://job-boards.greenhouse.io/environmentalscienceassociates/jobs/5387836008) | 2026-09-28 |
 | Environmental Science Associates | Environmental Scientist - Marine Infrastructure | Seattle, Washington, United States | conservation & policy |  | [Apply](https://job-boards.greenhouse.io/environmentalscienceassociates/jobs/5434694008) | 2026-09-28 |
 | WHOI | Robotics Software Engineer (Engineer II) | Onsite – Woods Hole, MA | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Onsite--Woods-Hole-MA/Robotics-Software-Engineer--Engineer-II-_JR100642) | 2026-09-28 |
 | Sofar Ocean | Routing Specialist - US (Remote) | Remote - USA | marine data & GIS |  | [Apply](https://jobs.ashbyhq.com/sofarocean/e10e363b-c6b4-406c-bd29-e95342d211bf) | 2026-09-25 |
-| Sofar Ocean | Routing Specialist - APAC (Night Shift) | India | marine data & GIS |  | [Apply](https://jobs.ashbyhq.com/sofarocean/fbcc5255-48fd-48cc-9918-1c8edcc520ce) | 2026-09-25 |
 | Environmental Science Associates | Archaeological Field Technician (On-Call) | Seattle, Washington, United States | environmental consulting | ⏳ | [Apply](https://job-boards.greenhouse.io/environmentalscienceassociates/jobs/5433371008) | 2026-09-24 |
 | OceanX | AI Immersive Technologist | Singapore | education & aquarium |  | [Apply](https://job-boards.greenhouse.io/oceanx/jobs/5990811004) | 2026-09-24 |
 | Maine Coast Heritage Trust | Conservation Associate |  | conservation & policy |  | [Apply](https://www.conservationjobboard.com/job-listing-conservation-associate-mount-desert-maine/5420081894) | 2026-09-24 |
-| OceanX | Software Engineer – AI and Data | Singapore | marine data & GIS |  | [Apply](https://job-boards.greenhouse.io/oceanx/jobs/6103691004) | 2026-09-24 |
+| OceanX | Software Engineer – AI and Data | Singapore | marine data & GIS |  | 🔒 | 2026-09-24 |
 | Yakama Nation Fisheries, Fisheries Resources Management (FRM) | Fish Technician III |  | fisheries |  | [Apply](https://www.conservationjobboard.com/job-listing-fish-technician-iii-twisp-washington/1747535626) | 2026-09-23 |
 | One Hundred Miles | Coastal Planning and Policy Strategist |  | coastal & estuarine ecology |  | [Apply](https://www.conservationjobboard.com/job-listing-coastal-planning-and-policy-strategist-brunswick-georgia/9328801578) | 2026-09-22 |
 | Wyoming Game & Fish | Fish Culturist |  | fisheries |  | [Apply](https://www.conservationjobboard.com/job-listing-fish-culturist-cheyenne-wyoming/5430798121) | 2026-09-22 |
@@ -73,10 +79,10 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | WHOI | Mechanical Engineer (OSL Research Engineer) | Onsite – Woods Hole, MA | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Onsite--Woods-Hole-MA/Mechanical-Engineer--OSL-Research-Engineer-_JR100626) | 2026-09-16 |
 | WHOI | Mechanical Engineer (OSL Engineer II) | Onsite – Woods Hole, MA | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Onsite--Woods-Hole-MA/Mechanical-Engineer--OSL-Engineer-II-_JR100638) | 2026-09-16 |
 | ICF | Wetland Biologist | 4 Locations | marine biology |  | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Austin-TX/Wetland-Biologist_R2603039) | 2026-09-11 |
-| WHOI | Third Assistant Engineer | Iselin Dock Building Ship Operations | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Iselin-Dock-Building-Ship-Operations/Third-Assistant-Engineer_JR100624) | 2026-09-04 |
-| ERM | Managing Consultant, Wetland Delineator/Botanist - Casual | Walnut Creek, California | coastal & estuarine ecology |  | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Managing-Consultant--Wetland-Delineator-Botanist---Casual_R00031557-1) | 2026-09-04 |
-| ERM | Consulting Associate, Environmental Scientist (Assistant Wetland Delineator) | 2 Locations | environmental consulting |  | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Houston-Texas/Consulting-Associate--Environmental-Scientist--Assistant-Wetland-Delineator-_R00031890-1) | 2026-09-04 |
-| WHOI | Engineering Technician (REMUS Engineering Assistant III) | Onsite – Woods Hole, MA | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Onsite--Woods-Hole-MA/Engineering-Technician--REMUS-Engineering-Assistant-III-_JR100595) | 2026-09-04 |
+| WHOI | Third Assistant Engineer | Iselin Dock Building Ship Operations | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Iselin-Dock-Building-Ship-Operations/Third-Assistant-Engineer_JR100624) | 2026-09-06 |
+| ERM | Managing Consultant, Wetland Delineator/Botanist - Casual | Walnut Creek, California | coastal & estuarine ecology |  | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Managing-Consultant--Wetland-Delineator-Botanist---Casual_R00031557-1) | 2026-09-06 |
+| ERM | Consulting Associate, Environmental Scientist (Assistant Wetland Delineator) | 2 Locations | environmental consulting |  | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Houston-Texas/Consulting-Associate--Environmental-Scientist--Assistant-Wetland-Delineator-_R00031890-1) | 2026-09-06 |
+| WHOI | Engineering Technician (REMUS Engineering Assistant III) | Onsite – Woods Hole, MA | ocean engineering & technology |  | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Onsite--Woods-Hole-MA/Engineering-Technician--REMUS-Engineering-Assistant-III-_JR100595) | 2026-09-06 |
 | Lindblad Expeditions | Licensed Expedition Staff | Global | other |  | [Apply](https://jobs.lever.co/lindblad-expeditions/ee91c07a-3cf7-4960-9182-19ee9af5c4d2) | 2026-08-20 |
 | Lindblad Expeditions | Second Mate | Seattle, WA | coastal & estuarine ecology |  | [Apply](https://jobs.lever.co/lindblad-expeditions/cc2d314c-439d-4569-a2c2-1aac8c8297b2) | 2026-08-14 |
 | Lindblad Expeditions | Galley Careers – National Geographic Quest & National Geographic Venture | Seattle, WA | other |  | [Apply](https://jobs.lever.co/lindblad-expeditions/ee1bf358-284f-4eb6-b5b9-a3bd63775755) | 2026-07-16 |
