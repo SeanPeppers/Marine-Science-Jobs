@@ -39,7 +39,7 @@ MARINE_RE = re.compile(
 # words like "environmental" or "conservation" show up in unrelated postings' boilerplate.
 ADJACENT_TITLE_RE = re.compile(
     r"\b(?:gis|geospatial|remote sensing|cartograph\w*|environmental|ecolog\w*|"
-    r"biolog\w*|wildlife|natural resources?|conservation|water quality|water resources|"
+    r"biologists?|aquatic|wildlife|natural resources?|conservation|water quality|water resources|"
     r"hydrolog\w*|watershed|stormwater|wetland\w*|habitat|restoration|invasive species|"
     r"field (?:tech\w*|crew|assistant)|nepa|sustainability|climate)\b",
     re.IGNORECASE,

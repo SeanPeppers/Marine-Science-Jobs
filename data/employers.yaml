@@ -35,6 +35,10 @@
 - {name: National Audubon Society, ats: workday, host: audubon.wd503.myworkdayjobs.com, tenant: audubon, site: Audubon}
 - {name: SeaWorld Entertainment, ats: workday, host: seaworldentertainment.wd1.myworkdayjobs.com, tenant: seaworldentertainment, site: SEA}
 - {name: William & Mary (VIMS), ats: workday, host: williammary.wd12.myworkdayjobs.com, tenant: williammary, site: WM}
+- {name: Woolpert, ats: greenhouse, slug: woolpert}
+- {name: SGS, ats: smartrecruiters, slug: sgs}
+- {name: SLR Consulting, ats: workday, host: slrconsulting.wd103.myworkdayjobs.com, tenant: slrconsulting, site: SLRCareers}
+- {name: Verdantas, ats: workday, host: verdantas.wd108.myworkdayjobs.com, tenant: verdantas, site: Verdantas}
 # Not pollable yet (no collector for their ATS): Ocean Infinity (workable ocean-infinity),
 # Terradepth (Paylocity), Georgia Aquarium (UltiPro), Geosyntec (iCIMS),
 # CSA Ocean Sciences and Atlantic Sapphire (ADP Workforce Now), Anchor QEA (BambooHR),
@@ -42,4 +46,7 @@
 # Pacific States Marine Fisheries Commission and Moffatt & Nichol (ADP), Open Ocean Robotics (Workable),
 # Environmental Defense Fund and NRDC (iCIMS), Conservation International (Taleo).
 # Tried and dropped (no relevant jobs passed the filter in a test run): Equinor, Avangrid,
-# National Geographic; California Academy of Sciences (mostly non-marine).
+# National Geographic, Overstory, Carbon Direct, Cloverly, Albedo, HawkEye 360, Sylvera, ICEYE,
+# Mapbox, Charm Industrial, Sierra Club, Xylem; mostly off-topic: California Academy of Sciences,
+# BlackSky, Muon Space, Esri, Isometric, Amentum (defense), Eurofins (medical labs).
+# Unsupported ATS: Stantec (SelectMinds); Montrose and Veolia (Workday site not resolved).

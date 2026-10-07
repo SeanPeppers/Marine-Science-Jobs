@@ -94,7 +94,16 @@ def test_adjacent_titles() -> None:
         job("Accountant", "Supports our conservation mission.", company="Acme"),
         job("Archaeological Field Technician", company="Acme"),
         job("Stormwater Engineer", company="Acme"),
-        job("Assistant Professor of Biology", company="Acme"),
+        job("Assistant Professor, Wildlife Biologist", company="Acme"),
         job("Conservation Science Volunteer", company="Acme"),
     ]
     assert titles(jobs) == {"GIS Analyst", "Water Quality Technician"}
+
+
+def test_adjacent_biology_is_field_not_medical() -> None:
+    jobs = [
+        job("Wildlife Biologist", company="Acme"),
+        job("Biologiste Médical (F/H)", company="Acme"),
+        job("Biologics HPLC Scientist", company="Acme"),
+    ]
+    assert titles(jobs) == {"Wildlife Biologist"}
