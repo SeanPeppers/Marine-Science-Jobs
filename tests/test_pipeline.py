@@ -107,3 +107,34 @@ def test_adjacent_biology_is_field_not_medical() -> None:
         job("Biologics HPLC Scientist", company="Acme"),
     ]
     assert titles(jobs) == {"Wildlife Biologist"}
+
+
+def test_location_rules() -> None:
+    jobs = [
+        job("Marine A", location="Tampa, FL"),
+        job("Marine B", location="Remote - USA"),
+        job("Marine C", location="SeaWorld Orlando"),
+        job("Marine D", location="Merrillville, IN, US"),
+        job("Marine E", location="Gurugram, HR, IN"),
+        job("Marine F", location="Milan, IT"),
+        job("Marine F2", location="Bangalore, IN"),
+        job("Marine G", location="Melbourne, Australia"),
+        job("Marine H", location="Mississauga, ON, CA"),
+        job("Marine I", location="Seattle, WA; Vancouver, BC"),
+        job("Marine J", location="Remote, Egypt"),
+        job(
+            "Marine K",
+            "Salary £18,000 - £22,000 per annum.",
+            location="Remote, England",
+        ),
+        job("Marine L", "Pay: $30 to $35 per hour.", location="Remote, Canada"),
+    ]
+    assert titles(jobs) == {
+        "Marine A",
+        "Marine B",
+        "Marine C",
+        "Marine D",
+        "Marine I",
+        "Marine J",
+        "Marine L",
+    }
