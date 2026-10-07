@@ -191,7 +191,10 @@ def _himalayas(client: httpx.Client) -> list[Job]:
             HIMALAYAS_URL, params={"q": term}, headers={"User-Agent": UA}, timeout=30
         )
         resp.raise_for_status()  # a 429 aborts the source; the next daily run retries
-        for j in resp.json()["jobs"]:
+        for j in resp.json().get("jobs") or []:
+            # Skip malformed entries rather than losing the whole source to a KeyError.
+            if not j.get("guid") or not j.get("title"):
+                continue
             if HIMALAYAS_SKIP_SENIORITY & set(j.get("seniority") or []):
                 continue
             where = ", ".join(j.get("locationRestrictions") or []) or "Anywhere"
@@ -203,7 +206,9 @@ def _himalayas(client: httpx.Client) -> list[Job]:
                     location=f"Remote - {where}",
                     url=j["guid"],
                     source="himalayas",
-                    posted=datetime.fromtimestamp(j["pubDate"], UTC).date().isoformat(),
+                    posted=datetime.fromtimestamp(j["pubDate"], UTC).date().isoformat()
+                    if j.get("pubDate")
+                    else today(),
                     description=(_pay_line(j) + strip_html(j.get("description", "")))[
                         :DESCRIPTION_CAP
                     ],
