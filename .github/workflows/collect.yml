@@ -15,6 +15,8 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
+    # A hung source must not hold the runner for the 6 h default.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v10.2.0
