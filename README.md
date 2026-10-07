@@ -1,7 +1,10 @@
 # Marine Science Jobs
 
 Entry-level, full-time marine science jobs (bachelor's degree, about one year of experience),
-collected daily. Jobs that require an MS/PhD, 3+ years of experience, or a senior title are left out.
+plus related roles a marine science graduate can get (GIS, environmental, water quality, wildlife,
+conservation), collected daily. Jobs that require an MS/PhD, 3+ years of experience, or a senior title are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
+Jobs are US-based or remote; on-site jobs outside the US are left out, and so are remote jobs abroad
+that list pay under about $40k a year.
 Each job is tagged with one subfield: marine biology, oceanography, fisheries, aquaculture,
 coastal & estuarine ecology, conservation & policy, ocean engineering & technology,
 marine data & GIS, education & aquarium, environmental consulting, or other.
@@ -21,7 +24,8 @@ The resume is parsed in memory only: it is never uploaded anywhere or stored on 
 
 The table below is rebuilt every day at 12:00 UTC by GitHub Actions from keyless sources:
 [Conservation Job Board](https://www.conservationjobboard.com/), [ECO Magazine](https://ecomagazine.com/),
-[Job Bank Canada](https://www.jobbank.gc.ca/), and public Greenhouse, Lever, Ashby,
+[Job Bank Canada](https://www.jobbank.gc.ca/), remote jobs sourced from
+[Himalayas](https://himalayas.app/) (each links back to its Himalayas listing), and public Greenhouse, Lever, Ashby,
 SmartRecruiters, and Workday job boards of marine employers. Keyed sources appear only in the
 local app ("Jobs by Adzuna" attribution is shown there). Jobs are marked closed when their source
 stops listing them and removed 60 days after a source last listed them.

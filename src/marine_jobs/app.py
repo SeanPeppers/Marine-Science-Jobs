@@ -135,6 +135,7 @@ def jobs(
     lon: Annotated[float | None, Form(ge=-180, le=180)] = None,
     radius_miles: Annotated[float, Form(ge=5, le=500)] = 100,
     include_remote: Annotated[bool, Form()] = True,
+    remote_only: Annotated[bool, Form()] = False,
     min_score: Annotated[float, Form(ge=0, le=100)] = 0,
 ) -> dict[str, Any]:
     text = resume_text(resume) if resume is not None and resume.filename else None
@@ -143,6 +144,8 @@ def jobs(
         if job.remote:
             if include_remote:
                 rows.append((job, None, False))
+            continue
+        if remote_only:
             continue
         if lat is None or lon is None:
             rows.append((job, None, False))

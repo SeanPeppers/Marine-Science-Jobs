@@ -31,9 +31,33 @@ MARINE_RE = re.compile(
     r"shellfish|oysters?|coastal|coasts?|estuar\w*|reefs?|coral\w*|kelp|mangroves?|"
     r"salt ?marsh\w*|wetlands?|tidal|intertidal|aquariums?|hydrograph\w*|bathymetr\w*|"
     r"benthic|plankton\w*|phytoplankton|zooplankton|whales?|dolphins?|cetaceans?|"
-    r"pinnipeds?|noaa|nmfs|great lakes|limnolog\w*|underwater|offshore wind)\b",
+    r"pinnipeds?|noaa|nmfs|great lakes|limnolog\w*|underwater|offshore wind|blue carbon)\b",
     re.IGNORECASE,
 )
+
+# Roles open to marine-science grads outside ocean work. Matched on the title only, since
+# words like "environmental" or "conservation" show up in unrelated postings' boilerplate.
+ADJACENT_TITLE_RE = re.compile(
+    r"\b(?:gis|geospatial|remote sensing|cartograph\w*|environmental|ecolog\w*|"
+    r"biologists?|aquatic|wildlife|natural resources?|conservation|water quality|water resources|"
+    r"hydrolog\w*|watershed|stormwater|wetland\w*|habitat|restoration|invasive species|"
+    r"field (?:tech\w*|crew|assistant)|nepa|sustainability|climate)\b",
+    re.IGNORECASE,
+)
+# Adjacent-title matches that need a different degree (archaeology, engineering) or are safety roles.
+ADJACENT_EXCLUDE_RE = re.compile(
+    r"\b(?:archaeolog\w*|paleontolog\w*|health (?:and|&) safety|ehs|engineer\w*|"
+    r"mechanic|computational|molecular)\b",
+    re.IGNORECASE,
+)
+# Business roles that "marine"/"ocean" words pull in (marine insurance, ocean freight, sales).
+NON_SCIENCE_TITLE_RE = re.compile(
+    r"\b(?:sales|adjuster|underwriter|insurance|freight|import|export|tutor|legal|attorney|"
+    r"paralegal|philanthropy|fundrais\w*|accountant|recruiter)\b",
+    re.IGNORECASE,
+)
+# Broad aggregators whose postings come from any industry: match relevance on the title only.
+TITLE_ONLY_SOURCES = {"himalayas"}
 
 WORD_NUMBERS = {
     w: i
@@ -75,7 +99,8 @@ YEARS_RE = re.compile(
 )
 SENIOR_TITLE_RE = re.compile(
     r"\b(?:senior|supervisory|sr\b\.?|lead|principal|manager|director|head of|chief|"
-    r"vice president|vp|staff (?:scientist|engineer))\b|\bpost-?doc",
+    r"vice president|vp|staff (?:scientist|engineer)|managing|partner|leader|professor|"
+    r"faculty|instructor|lecturer|fellow|volunteer|work study)\b|\bpost-?doc",
     re.IGNORECASE,
 )
 
@@ -88,6 +113,19 @@ TEMP_RE = re.compile(
 CITIZEN_RE = re.compile(
     r"\b(?:u\.?s\.? citizen\w*|united states citizen\w*|citizenship (?:is )?required|"
     r"must be a citizen|security clearance|secret clearance|clearance (?:is )?required)",
+    re.IGNORECASE,
+)
+
+# Fake-job red flags (FTC job-scam guidance): off-platform chat, personal email, money moves.
+SCAM_RE = re.compile(
+    r"\b(?:telegram|whats ?app|wickr|signal app|google hangouts|"
+    r"[\w.+-]+@(?:gmail|yahoo|hotmail|outlook|aol|icloud|protonmail)\.com|"
+    r"text (?:us |me )?(?:to apply|your (?:resume|cv|name))|"
+    r"(?:cashier'?s? )?(?:check|cheque)s? (?:to deposit|will be (?:sent|mailed))|"
+    r"deposit (?:the |a )?(?:check|cheque)|reship\w*|package forwarding|"
+    r"(?:training|registration|application|processing|onboarding|starter kit) fee|"
+    r"purchase (?:your own )?(?:equipment|software) (?:from|through)|"
+    r"wire transfer|gift cards?|bitcoin|zelle|cash ?app|venmo)",
     re.IGNORECASE,
 )
 
@@ -217,7 +255,11 @@ def _min_years(match: re.Match[str]) -> int:
 
 def _excluded(job: Job) -> bool:
     text = _text(job)
-    if SENIOR_TITLE_RE.search(job.title) or DEGREE_REQUIRED_RE.search(text):
+    if (
+        SENIOR_TITLE_RE.search(job.title)
+        or NON_SCIENCE_TITLE_RE.search(job.title)
+        or DEGREE_REQUIRED_RE.search(text)
+    ):
         return True
     return any(_min_years(m) >= MIN_YEARS for m in YEARS_RE.finditer(text))
 
@@ -238,11 +280,158 @@ def _subfield(job: Job) -> str:
     return best if scores[best] else "other"
 
 
+US_STATES = {
+    "AL",
+    "AK",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY",
+    "DC",
+    "PR",
+}
+US_RE = re.compile(
+    r"united states|\busa\b|\bu\.s\.|\bUS\b|\bUS-[A-Z]{2}\b|alabama|alaska|arizona|arkansas|"
+    r"california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|"
+    r"iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|"
+    r"mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|"
+    r"new york|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|"
+    r"south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington|"
+    r"wisconsin|wyoming|puerto rico",
+    re.IGNORECASE,
+)
+# ponytail: hand-picked country list, not exhaustive; unlisted countries count as unknown and stay.
+NON_US_RE = re.compile(
+    r"\b(?:oconus|canada|mexico|brazil|chile|peru|colombia|argentina|ecuador|"
+    r"united kingdom|england|scotland|wales|ireland|france|germany|spain|portugal|italy|"
+    r"netherlands|belgium|denmark|norway|sweden|finland|iceland|poland|romania|greece|"
+    r"switzerland|austria|australia|new zealand|india|china|japan|korea|singapore|malaysia|"
+    r"indonesia|philippines|thailand|vietnam|taiwan|hong kong|egypt|south africa|kenya|"
+    r"mozambique|nigeria|saudi arabia|united arab emirates|uae|qatar|oman|israel|turkey|"
+    r"micronesia|fiji|bahamas|london|bangalore|bengaluru|gurugram|gurgaon|hyderabad|noida|"
+    r"mumbai|pune|chennai|kolkata|delhi)\b|[,(]\s*(?:AB|BC|MB|NB|NL|NS|NT|NU|ON|PE|QC|SK|YT)\b",
+    re.IGNORECASE,
+)
+REGION_COUNTRY_RE = re.compile(
+    r",[^,]+,\s*([A-Z]{2})\s*$"
+)  # "Nantes, Pays de la Loire, FR"
+CITY_CODE_RE = re.compile(r",\s*([A-Z]{2})\s*$")  # "Tampa, FL" or "Milan, IT"
+
+
+def _non_us(place: str) -> bool:
+    """True only when the place is clearly outside the US; unknown places count as US."""
+    if m := REGION_COUNTRY_RE.search(place):
+        return m[1] != "US"
+    if US_RE.search(place):
+        return False
+    foreign = bool(NON_US_RE.search(place))
+    if m := CITY_CODE_RE.search(place):
+        # "IN" is Indiana or India; the city name decides ("Bangalore, IN").
+        return m[1] not in US_STATES or (m[1] == "IN" and foreign)
+    return foreign
+
+
+PAY_FLOOR_USD = 40_000
+FX_TO_USD = {
+    "$": 1.0,
+    "£": 1.27,
+    "€": 1.08,
+}  # ponytail: fixed rates; refresh if they drift far
+PAY_RE = re.compile(
+    r"([$£€])\s?(\d[\d,]*(?:\.\d+)?)\s?(k\b)?"
+    r"(?:\s*(?:-|–|to)\s*[$£€]?\s?(\d[\d,]*(?:\.\d+)?)\s?(k\b)?)?"
+    r"\s*(?:/\s*|per\s+|an?\s+)(hour|hr|year|yr|annum)",
+    re.IGNORECASE,
+)
+
+
+def _annual_pay(text: str) -> float | None:
+    """Highest annualized USD pay stated in the text, or None when no pay is listed."""
+    best = None
+    for cur, low, low_k, high, high_k, period in PAY_RE.findall(text):
+        amount = float((high or low).replace(",", "")) * (
+            1000 if (high_k or low_k) else 1
+        )
+        if period.lower() in {"hour", "hr"}:
+            amount *= 2080
+        amount *= FX_TO_USD[cur]
+        best = amount if best is None else max(best, amount)
+    return best
+
+
+def _location_ok(job: Job) -> bool:
+    """US jobs (or unknown location) always; elsewhere only remote, and not below the pay floor."""
+    if not all(_non_us(part) for part in job.location.split(";")):
+        return True
+    if not (job.remote or "remote" in job.location.lower()):
+        return False
+    pay = _annual_pay(job.description)
+    return pay is None or pay >= PAY_FLOOR_USD
+
+
 def classify(jobs: list[Job]) -> list[Job]:
     out = []
     for job in jobs:
-        marine = job.company.lower() in MARINE_EMPLOYERS or MARINE_RE.search(_text(job))
-        if not marine or _excluded(job):
+        marine = (
+            job.company.lower() in MARINE_EMPLOYERS
+            or MARINE_RE.search(
+                job.title if job.source in TITLE_ONLY_SOURCES else _text(job)
+            )
+            or (
+                ADJACENT_TITLE_RE.search(job.title)
+                and not ADJACENT_EXCLUDE_RE.search(job.title)
+            )
+        )
+        if (
+            not marine
+            or _excluded(job)
+            or SCAM_RE.search(_text(job))
+            or not _location_ok(job)
+        ):
             continue
         text = _text(job)
         tags = [

@@ -1,8 +1,8 @@
 """Keyed collectors: run only in the local app, with the user's own free API keys.
 
-Per-run call counts (8 search terms, one page each; no paging, no retries):
-USAJOBS 8, Adzuna 8 per country (countries capped so total <= 16 of 250/day),
-Careerjet 8 (+1 IP lookup), Jooble 8. Calls are paced TERM_DELAY seconds apart.
+Per-run call counts (10 search terms, one page each; no paging, no retries):
+USAJOBS 10, Adzuna 10 per country (countries capped so total <= 20 of 250/day),
+Careerjet 10 (+1 IP lookup), Jooble 10. Calls are paced TERM_DELAY seconds apart.
 A 429 or any HTTP error aborts that source (logged, returns []).
 """
 
@@ -32,6 +32,8 @@ TERMS = [
     "coastal ecologist",
     "aquarist",
     "environmental scientist marine",
+    "GIS analyst",
+    "environmental technician",
 ]
 TERM_DELAY = 1.0
 BROWSER_UA = (
@@ -39,7 +41,7 @@ BROWSER_UA = (
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
 ATTRIBUTIONS = {"adzuna": "Jobs by Adzuna"}
-ADZUNA_MAX_COUNTRIES = 2  # 8 terms * 2 = 16 calls <= 20
+ADZUNA_MAX_COUNTRIES = 2  # 10 terms * 2 = 20 calls <= 20
 
 
 @dataclass

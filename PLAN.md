@@ -6,8 +6,8 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 
 ## Settled decisions
 
-- Scope: all marine subfields, each job tagged with one `subfield`. Worldwide + remote.
-- Exclude: jobs requiring MS/PhD, or 3+ years experience, or senior/manager/director titles.
+- Scope: all marine subfields, each job tagged with one `subfield`. US + remote anywhere (on-site non-US dropped; non-US remote dropped only if listed pay < $40k/yr; unknown locations kept). Also adjacent roles open to marine-science grads (GIS, environmental, water quality, ecology, wildlife, conservation), matched on title only.
+- Exclude: jobs requiring MS/PhD, or 3+ years experience, or senior/manager/director titles, or with scam red flags (off-platform chat apps, personal email, check/fee/gift-card payment talk).
 - Tags: `temp` (seasonal/temporary/contract/term), `us-citizen` (citizenship or clearance required; flag, not exclude).
 - Rolling: no cycle. Mark `closed` when a source that ran successfully stops returning a job (per employer for ATS boards); no separate link check, since sources drop filled jobs themselves; delete 60 days after `last_seen` (the last day a source listed it).
 - Dedup: fuzzy match on normalized company + title + location (rapidfuzz ratio >= 90), URL as tiebreaker.
@@ -15,7 +15,7 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 - README table: Company | Role | Location | Subfield | Tags | Apply | Posted. No resume data, ever.
 - Sources split: **keyless sources run in Actions**; **keyed sources run only in the local app with the user's own free keys** (`.env`, gitignored). Free tiers only. Respect robots.txt and ToS; follow the `api-integration-discipline` skill.
 - Local app: FastAPI + one static HTML page with vanilla JS, `uv run marine-jobs` opens `http://localhost:8000`.
-  - Location: city search box (offline GeoNames cities1000, CC-BY) + radius slider in miles + "include remote" toggle.
+  - Location: city search box (offline GeoNames cities1000, CC-BY) + radius slider in miles + "include remote" and "remote only" toggles.
   - Resume: PDF only, parsed in memory, never written to disk. Non-PDF or unreadable PDF gives a plain error message.
   - Matching: TF-IDF cosine (scikit-learn) resume vs job title+description, plus bonus for matched marine skill keywords. Score 0-100.
   - Sort: group by posting day, newest day first; within a day, highest match first. Hide below a min-match threshold (slider).
@@ -31,6 +31,7 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 | Conservation Job Board RSS `https://www.conservationjobboard.com/rss` | Actions | no auth; keyword filter client-side |
 | ECO Magazine `https://ecomagazine.com/feed/?post_type=job` | Actions | small, high relevance |
 | Canada Job Bank Atom `https://www.jobbank.gc.ca/jobsearch/feed/jobSearchRSSfeed?searchstring=...` | Actions | Crawl-delay 5 s |
+| Himalayas `https://himalayas.app/jobs/api/search?q=...` | Actions | remote jobs; link back + credit required; one page per term, daily |
 | Greenhouse/Lever/Ashby/SmartRecruiters/Workday per employer, from `data/employers.yaml` | Actions | public JSON job-board APIs |
 | USAJOBS `https://data.usajobs.gov/api/search` | Local | key + email User-Agent |
 | Adzuna | Local | key; "Jobs by Adzuna" attribution; 250/day |

@@ -74,3 +74,83 @@ def test_merge() -> None:
         out["Kept"].first_seen == "2026-09-20" and out["Kept"].last_seen == "2026-10-01"
     )
     assert out["Gone"].closed and not out["Kept"].closed
+
+
+def test_scam_filter() -> None:
+    jobs = [
+        job("Marine A", "Interview on Telegram with our hiring manager."),
+        job("Marine B", "Send your resume to oceanjobs123@gmail.com."),
+        job("Marine C", "We will mail you a check to deposit for equipment."),
+        job("Marine D", "A $50 training fee is required."),
+        job("Marine E", "No experience required. Apply at noaa.gov."),
+    ]
+    assert titles(jobs) == {"Marine E"}
+
+
+def test_adjacent_titles() -> None:
+    jobs = [
+        job("GIS Analyst", company="Acme"),
+        job("Water Quality Technician", company="Acme"),
+        job("Accountant", "Supports our conservation mission.", company="Acme"),
+        job("Archaeological Field Technician", company="Acme"),
+        job("Stormwater Engineer", company="Acme"),
+        job("Assistant Professor, Wildlife Biologist", company="Acme"),
+        job("Conservation Science Volunteer", company="Acme"),
+    ]
+    assert titles(jobs) == {"GIS Analyst", "Water Quality Technician"}
+
+
+def test_adjacent_biology_is_field_not_medical() -> None:
+    jobs = [
+        job("Wildlife Biologist", company="Acme"),
+        job("Biologiste Médical (F/H)", company="Acme"),
+        job("Biologics HPLC Scientist", company="Acme"),
+    ]
+    assert titles(jobs) == {"Wildlife Biologist"}
+
+
+def test_location_rules() -> None:
+    jobs = [
+        job("Marine A", location="Tampa, FL"),
+        job("Marine B", location="Remote - USA"),
+        job("Marine C", location="SeaWorld Orlando"),
+        job("Marine D", location="Merrillville, IN, US"),
+        job("Marine E", location="Gurugram, HR, IN"),
+        job("Marine F", location="Milan, IT"),
+        job("Marine F2", location="Bangalore, IN"),
+        job("Marine G", location="Melbourne, Australia"),
+        job("Marine H", location="Mississauga, ON, CA"),
+        job("Marine I", location="Seattle, WA; Vancouver, BC"),
+        job("Marine J", location="Remote, Egypt"),
+        job(
+            "Marine K",
+            "Salary £18,000 - £22,000 per annum.",
+            location="Remote, England",
+        ),
+        job("Marine L", "Pay: $30 to $35 per hour.", location="Remote, Canada"),
+    ]
+    assert titles(jobs) == {
+        "Marine A",
+        "Marine B",
+        "Marine C",
+        "Marine D",
+        "Marine I",
+        "Marine J",
+        "Marine L",
+    }
+
+
+def test_aggregator_noise() -> None:
+    jobs = [
+        job("Inland Marine Desk Adjuster", company="Acme"),
+        job("Ocean Export Agent", company="Acme"),
+        job("Molecular Biologist - Fully Remote", company="Acme"),
+        job(
+            "Operations Coordinator",
+            "Ocean freight team.",
+            company="Acme",
+            source="himalayas",
+        ),
+        job("Jr. Geospatial Analyst", company="Acme", source="himalayas"),
+    ]
+    assert titles(jobs) == {"Jr. Geospatial Analyst"}

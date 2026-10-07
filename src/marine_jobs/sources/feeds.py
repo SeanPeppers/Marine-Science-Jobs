@@ -1,4 +1,4 @@
-"""Keyless RSS/Atom collectors: Conservation Job Board, ECO Magazine, Canada Job Bank."""
+"""Keyless collectors: Conservation Job Board, ECO Magazine, Canada Job Bank, Himalayas."""
 
 from __future__ import annotations
 
@@ -29,8 +29,33 @@ JOBBANK_TERMS = [
     "aquaculture",
     "oceanographer",
     "hydrographer",
+    "GIS",
+    "environmental technician",
+    "water quality",
 ]
 JOBBANK_DELAY = 5  # robots.txt Crawl-delay
+# Himalayas public remote-jobs API: reuse allowed with a link back and source credit, which
+# the board's Apply link and README credit provide. Data refreshes daily, so one page per term.
+HIMALAYAS_URL = "https://himalayas.app/jobs/api/search"
+HIMALAYAS_TERMS = [
+    "marine",
+    "ocean",
+    "fisheries",
+    "GIS",
+    "geospatial",
+    "remote sensing",
+    "environmental scientist",
+    "environmental technician",
+    "ecologist",
+    "biologist",
+    "wildlife",
+    "conservation",
+    "water quality",
+    "hydrologist",
+]
+HIMALAYAS_DELAY = 2
+HIMALAYAS_SKIP_SENIORITY = {"Senior", "Manager", "Director", "Executive", "Lead"}
+CURRENCY_SIGN = {"USD": "$", "GBP": "£", "EUR": "€"}
 
 
 def today() -> str:
@@ -147,12 +172,59 @@ def _jobbank(client: httpx.Client) -> list[Job]:
     return list(seen.values())
 
 
+def _pay_line(j: dict[str, Any]) -> str:
+    """'Pay: $50000 - $70000 per year' so the pipeline's pay floor can read it."""
+    sign = CURRENCY_SIGN.get(j.get("currency") or "USD")
+    top = j.get("maxSalary") or j.get("minSalary")
+    if not sign or not top:
+        return ""
+    period = "hour" if j.get("salaryPeriod") == "hourly" else "year"
+    return f"Pay: {sign}{j.get('minSalary') or top} - {sign}{top} per {period}\n"
+
+
+def _himalayas(client: httpx.Client) -> list[Job]:
+    seen: dict[str, Job] = {}
+    for i, term in enumerate(HIMALAYAS_TERMS):
+        if i:
+            time.sleep(HIMALAYAS_DELAY)
+        resp = client.get(
+            HIMALAYAS_URL, params={"q": term}, headers={"User-Agent": UA}, timeout=30
+        )
+        resp.raise_for_status()  # a 429 aborts the source; the next daily run retries
+        for j in resp.json().get("jobs") or []:
+            # Skip malformed entries rather than losing the whole source to a KeyError.
+            if not j.get("guid") or not j.get("title"):
+                continue
+            if HIMALAYAS_SKIP_SENIORITY & set(j.get("seniority") or []):
+                continue
+            where = ", ".join(j.get("locationRestrictions") or []) or "Anywhere"
+            seen.setdefault(
+                j["guid"],
+                Job(
+                    title=j["title"].strip(),
+                    company=j.get("companyName", ""),
+                    location=f"Remote - {where}",
+                    url=j["guid"],
+                    source="himalayas",
+                    posted=datetime.fromtimestamp(j["pubDate"], UTC).date().isoformat()
+                    if j.get("pubDate")
+                    else today(),
+                    description=(_pay_line(j) + strip_html(j.get("description", "")))[
+                        :DESCRIPTION_CAP
+                    ],
+                    remote=True,
+                ),
+            )
+    return list(seen.values())
+
+
 def fetch(client: httpx.Client) -> list[Job]:
     jobs: list[Job] = []
     for name, collector in (
         ("conservationjobboard", _cjb),
         ("ecomagazine", _eco),
         ("jobbank", _jobbank),
+        ("himalayas", _himalayas),
     ):
         try:
             got = collector(client)

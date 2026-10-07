@@ -68,6 +68,7 @@
     </div>
     <div>
       <label><input type="checkbox" id="remote" checked> Include remote jobs</label>
+      <label><input type="checkbox" id="remote-only"> Remote only</label>
     </div>
     <div class="actions">
       <button type="submit">Find jobs</button>
@@ -205,6 +206,7 @@ $("search").addEventListener("submit", async (e) => {
   fd.append("radius_miles", $("radius").value);
   fd.append("min_score", $("min-score").value);
   fd.append("include_remote", $("remote").checked ? "true" : "false");
+  fd.append("remote_only", $("remote-only").checked ? "true" : "false");
   $("status").textContent = "Searching…";
   try { render(await api("/api/jobs", { method: "POST", body: fd })); }
   catch (err) { $("status").textContent = ""; showError(err.message); }
