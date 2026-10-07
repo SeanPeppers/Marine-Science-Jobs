@@ -19,6 +19,23 @@
 - {name: Fugro, ats: workday, host: fugro.wd3.myworkdayjobs.com, tenant: fugro, site: Careers}
 - {name: Pew Charitable Trusts, ats: workday, host: pewtrusts.wd5.myworkdayjobs.com, tenant: pewtrusts, site: TrustsExternal}
 - {name: ICF, ats: workday, host: icf.wd5.myworkdayjobs.com, tenant: icf, site: ICFExternal_Career_Site}
+- {name: Saildrone, marine: true, ats: greenhouse, slug: saildroneinc}
+- {name: Bedrock Ocean, marine: true, ats: ashby, slug: bedrockocean}
+- {name: Captura, marine: true, ats: greenhouse, slug: captura}
+- {name: Aquabyte, marine: true, ats: lever, slug: aquabyte}
+- {name: Boskalis, ats: smartrecruiters, slug: boskalis}
+- {name: The Maritime Aquarium, marine: true, ats: greenhouse, slug: themaritimeaquarium}
+- {name: Oceans Reefs & Aquariums, marine: true, ats: smartrecruiters, slug: OceansReefsAquariums}
+- {name: The Nature Conservancy, ats: workday, host: nature.wd108.myworkdayjobs.com, tenant: nature, site: ExternalCareers}
+- {name: University of New Hampshire, ats: workday, host: usnh.wd5.myworkdayjobs.com, tenant: usnh, site: Careers}
+- {name: Oregon State University, ats: workday, host: oregonstate.wd501.myworkdayjobs.com, tenant: oregonstate, site: osu_careers_site}
+- {name: University of Auckland, ats: smartrecruiters, slug: TheUniversityOfAuckland}
+- {name: Woodard & Curran, ats: lever, slug: woodardcurran}
 # Not pollable yet (no collector for their ATS): Ocean Infinity (workable ocean-infinity),
 # Terradepth (Paylocity), Georgia Aquarium (UltiPro), Geosyntec (iCIMS),
-# CSA Ocean Sciences and Atlantic Sapphire (ADP Workforce Now).
+# CSA Ocean Sciences and Atlantic Sapphire (ADP Workforce Now), Anchor QEA (BambooHR),
+# Integral Consulting (Paylocity), Tetra Tech (SelectMinds), Exponent, Dewberry and Lynker (iCIMS),
+# Pacific States Marine Fisheries Commission and Moffatt & Nichol (ADP), Open Ocean Robotics (Workable),
+# Environmental Defense Fund and NRDC (iCIMS), Conservation International (Taleo).
+# Tried and dropped (no marine jobs passed the filter in a test run): Equinor, Avangrid, WWF,
+# Audubon, National Geographic, SeaWorld, William & Mary (VIMS); California Academy of Sciences (mostly non-marine).
