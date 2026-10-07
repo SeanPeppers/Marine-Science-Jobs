@@ -1,7 +1,8 @@
 # Marine Science Jobs
 
 Entry-level, full-time marine science jobs (bachelor's degree, about one year of experience),
-collected daily. Jobs that require an MS/PhD, 3+ years of experience, or a senior title are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
+plus related roles a marine science graduate can get (GIS, environmental, water quality, wildlife,
+conservation), collected daily. Jobs that require an MS/PhD, 3+ years of experience, or a senior title are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
 Each job is tagged with one subfield: marine biology, oceanography, fisheries, aquaculture,
 coastal & estuarine ecology, conservation & policy, ocean engineering & technology,
 marine data & GIS, education & aquarium, environmental consulting, or other.

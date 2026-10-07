@@ -140,6 +140,8 @@ def _workday(client: httpx.Client, e: dict[str, Any]) -> list[Job]:
         # Workday reports `total` only on the first page; later pages send 0.
         total = total or data.get("total") or 0
         for j in postings:
+            if "title" not in j or "externalPath" not in j:  # un-linkable stubs
+                continue
             loc = j.get("locationsText", "")
             link = f"https://{e['host']}/{e['site']}{j['externalPath']}"
             jobs[link] = Job(j["title"], e["name"], loc, link, "workday",

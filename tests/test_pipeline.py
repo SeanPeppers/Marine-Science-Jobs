@@ -85,3 +85,16 @@ def test_scam_filter() -> None:
         job("Marine E", "No experience required. Apply at noaa.gov."),
     ]
     assert titles(jobs) == {"Marine E"}
+
+
+def test_adjacent_titles() -> None:
+    jobs = [
+        job("GIS Analyst", company="Acme"),
+        job("Water Quality Technician", company="Acme"),
+        job("Accountant", "Supports our conservation mission.", company="Acme"),
+        job("Archaeological Field Technician", company="Acme"),
+        job("Stormwater Engineer", company="Acme"),
+        job("Assistant Professor of Biology", company="Acme"),
+        job("Conservation Science Volunteer", company="Acme"),
+    ]
+    assert titles(jobs) == {"GIS Analyst", "Water Quality Technician"}

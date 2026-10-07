@@ -35,6 +35,22 @@ MARINE_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Roles open to marine-science grads outside ocean work. Matched on the title only, since
+# words like "environmental" or "conservation" show up in unrelated postings' boilerplate.
+ADJACENT_TITLE_RE = re.compile(
+    r"\b(?:gis|geospatial|remote sensing|cartograph\w*|environmental|ecolog\w*|"
+    r"biolog\w*|wildlife|natural resources?|conservation|water quality|water resources|"
+    r"hydrolog\w*|watershed|stormwater|wetland\w*|habitat|restoration|invasive species|"
+    r"field (?:tech\w*|crew|assistant)|nepa|sustainability|climate)\b",
+    re.IGNORECASE,
+)
+# Adjacent-title matches that need a different degree (archaeology, engineering) or are safety roles.
+ADJACENT_EXCLUDE_RE = re.compile(
+    r"\b(?:archaeolog\w*|paleontolog\w*|health (?:and|&) safety|ehs|engineer\w*|"
+    r"accountant|mechanic)\b",
+    re.IGNORECASE,
+)
+
 WORD_NUMBERS = {
     w: i
     for i, w in enumerate(
@@ -75,7 +91,8 @@ YEARS_RE = re.compile(
 )
 SENIOR_TITLE_RE = re.compile(
     r"\b(?:senior|supervisory|sr\b\.?|lead|principal|manager|director|head of|chief|"
-    r"vice president|vp|staff (?:scientist|engineer))\b|\bpost-?doc",
+    r"vice president|vp|staff (?:scientist|engineer)|managing|partner|leader|professor|"
+    r"faculty|instructor|lecturer|fellow|volunteer|work study)\b|\bpost-?doc",
     re.IGNORECASE,
 )
 
@@ -254,7 +271,14 @@ def _subfield(job: Job) -> str:
 def classify(jobs: list[Job]) -> list[Job]:
     out = []
     for job in jobs:
-        marine = job.company.lower() in MARINE_EMPLOYERS or MARINE_RE.search(_text(job))
+        marine = (
+            job.company.lower() in MARINE_EMPLOYERS
+            or MARINE_RE.search(_text(job))
+            or (
+                ADJACENT_TITLE_RE.search(job.title)
+                and not ADJACENT_EXCLUDE_RE.search(job.title)
+            )
+        )
         if not marine or _excluded(job) or SCAM_RE.search(_text(job)):
             continue
         text = _text(job)

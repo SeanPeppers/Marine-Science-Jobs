@@ -29,6 +29,9 @@ JOBBANK_TERMS = [
     "aquaculture",
     "oceanographer",
     "hydrographer",
+    "GIS",
+    "environmental technician",
+    "water quality",
 ]
 JOBBANK_DELAY = 5  # robots.txt Crawl-delay
 
