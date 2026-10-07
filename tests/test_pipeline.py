@@ -138,3 +138,19 @@ def test_location_rules() -> None:
         "Marine J",
         "Marine L",
     }
+
+
+def test_aggregator_noise() -> None:
+    jobs = [
+        job("Inland Marine Desk Adjuster", company="Acme"),
+        job("Ocean Export Agent", company="Acme"),
+        job("Molecular Biologist - Fully Remote", company="Acme"),
+        job(
+            "Operations Coordinator",
+            "Ocean freight team.",
+            company="Acme",
+            source="himalayas",
+        ),
+        job("Jr. Geospatial Analyst", company="Acme", source="himalayas"),
+    ]
+    assert titles(jobs) == {"Jr. Geospatial Analyst"}

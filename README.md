@@ -24,7 +24,8 @@ The resume is parsed in memory only: it is never uploaded anywhere or stored on 
 
 The table below is rebuilt every day at 12:00 UTC by GitHub Actions from keyless sources:
 [Conservation Job Board](https://www.conservationjobboard.com/), [ECO Magazine](https://ecomagazine.com/),
-[Job Bank Canada](https://www.jobbank.gc.ca/), and public Greenhouse, Lever, Ashby,
+[Job Bank Canada](https://www.jobbank.gc.ca/), remote jobs sourced from
+[Himalayas](https://himalayas.app/) (each links back to its Himalayas listing), and public Greenhouse, Lever, Ashby,
 SmartRecruiters, and Workday job boards of marine employers. Keyed sources appear only in the
 local app ("Jobs by Adzuna" attribution is shown there). Jobs are marked closed when their source
 stops listing them and removed 60 days after a source last listed them.

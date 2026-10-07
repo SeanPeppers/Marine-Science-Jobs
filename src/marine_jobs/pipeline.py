@@ -31,7 +31,7 @@ MARINE_RE = re.compile(
     r"shellfish|oysters?|coastal|coasts?|estuar\w*|reefs?|coral\w*|kelp|mangroves?|"
     r"salt ?marsh\w*|wetlands?|tidal|intertidal|aquariums?|hydrograph\w*|bathymetr\w*|"
     r"benthic|plankton\w*|phytoplankton|zooplankton|whales?|dolphins?|cetaceans?|"
-    r"pinnipeds?|noaa|nmfs|great lakes|limnolog\w*|underwater|offshore wind)\b",
+    r"pinnipeds?|noaa|nmfs|great lakes|limnolog\w*|underwater|offshore wind|blue carbon)\b",
     re.IGNORECASE,
 )
 
@@ -47,9 +47,17 @@ ADJACENT_TITLE_RE = re.compile(
 # Adjacent-title matches that need a different degree (archaeology, engineering) or are safety roles.
 ADJACENT_EXCLUDE_RE = re.compile(
     r"\b(?:archaeolog\w*|paleontolog\w*|health (?:and|&) safety|ehs|engineer\w*|"
-    r"accountant|mechanic)\b",
+    r"mechanic|computational|molecular)\b",
     re.IGNORECASE,
 )
+# Business roles that "marine"/"ocean" words pull in (marine insurance, ocean freight, sales).
+NON_SCIENCE_TITLE_RE = re.compile(
+    r"\b(?:sales|adjuster|underwriter|insurance|freight|import|export|tutor|legal|attorney|"
+    r"paralegal|philanthropy|fundrais\w*|accountant|recruiter)\b",
+    re.IGNORECASE,
+)
+# Broad aggregators whose postings come from any industry: match relevance on the title only.
+TITLE_ONLY_SOURCES = {"himalayas"}
 
 WORD_NUMBERS = {
     w: i
@@ -247,7 +255,11 @@ def _min_years(match: re.Match[str]) -> int:
 
 def _excluded(job: Job) -> bool:
     text = _text(job)
-    if SENIOR_TITLE_RE.search(job.title) or DEGREE_REQUIRED_RE.search(text):
+    if (
+        SENIOR_TITLE_RE.search(job.title)
+        or NON_SCIENCE_TITLE_RE.search(job.title)
+        or DEGREE_REQUIRED_RE.search(text)
+    ):
         return True
     return any(_min_years(m) >= MIN_YEARS for m in YEARS_RE.finditer(text))
 
@@ -406,7 +418,9 @@ def classify(jobs: list[Job]) -> list[Job]:
     for job in jobs:
         marine = (
             job.company.lower() in MARINE_EMPLOYERS
-            or MARINE_RE.search(_text(job))
+            or MARINE_RE.search(
+                job.title if job.source in TITLE_ONLY_SOURCES else _text(job)
+            )
             or (
                 ADJACENT_TITLE_RE.search(job.title)
                 and not ADJACENT_EXCLUDE_RE.search(job.title)

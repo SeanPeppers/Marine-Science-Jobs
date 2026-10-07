@@ -31,6 +31,7 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 | Conservation Job Board RSS `https://www.conservationjobboard.com/rss` | Actions | no auth; keyword filter client-side |
 | ECO Magazine `https://ecomagazine.com/feed/?post_type=job` | Actions | small, high relevance |
 | Canada Job Bank Atom `https://www.jobbank.gc.ca/jobsearch/feed/jobSearchRSSfeed?searchstring=...` | Actions | Crawl-delay 5 s |
+| Himalayas `https://himalayas.app/jobs/api/search?q=...` | Actions | remote jobs; link back + credit required; one page per term, daily |
 | Greenhouse/Lever/Ashby/SmartRecruiters/Workday per employer, from `data/employers.yaml` | Actions | public JSON job-board APIs |
 | USAJOBS `https://data.usajobs.gov/api/search` | Local | key + email User-Agent |
 | Adzuna | Local | key; "Jobs by Adzuna" attribution; 250/day |
