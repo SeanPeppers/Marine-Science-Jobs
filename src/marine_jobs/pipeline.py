@@ -110,6 +110,16 @@ TEMP_RE = re.compile(
     rf"contract (?:position|role|job|employee|basis)|contractor|{_NUM}[- ]months?\b)",
     re.IGNORECASE,
 )
+# Postings that name a degree a marine-science graduate holds or that counts as "related".
+DEGREE_FIT_RE = re.compile(
+    r"(?:\b(?:bachelor\w*|undergraduate|degree)\b|\bb\.?s\.?c?(?![a-z])|\bb\.?a\.?(?![a-z]))"
+    r"[^.;\n]{0,80}?\b(?:"
+    r"marine (?:science|biology|ecology)|ocean(?:ography| science)|oceanograph\w*|fisheries|"
+    r"aquatic (?:science|biology|ecology)|biolog(?:y|ical sciences?)|ecology|"
+    r"environmental (?:science|studies)|natural resources?|wildlife|zoology|geography|"
+    r"earth sciences?|geosciences?)",
+    re.IGNORECASE,
+)
 CITIZEN_RE = re.compile(
     r"\b(?:u\.?s\.? citizen\w*|united states citizen\w*|citizenship (?:is )?required|"
     r"must be a citizen|security clearance|secret clearance|clearance (?:is )?required)",
@@ -436,7 +446,11 @@ def classify(jobs: list[Job]) -> list[Job]:
         text = _text(job)
         tags = [
             t
-            for t, rx in (("temp", TEMP_RE), ("us-citizen", CITIZEN_RE))
+            for t, rx in (
+                ("temp", TEMP_RE),
+                ("us-citizen", CITIZEN_RE),
+                ("degree-fit", DEGREE_FIT_RE),
+            )
             if rx.search(text)
         ]
         merged = sorted(set(job.tags) | set(tags))  # keep tags a source set itself

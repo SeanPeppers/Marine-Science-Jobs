@@ -154,3 +154,15 @@ def test_aggregator_noise() -> None:
         job("Jr. Geospatial Analyst", company="Acme", source="himalayas"),
     ]
     assert titles(jobs) == {"Jr. Geospatial Analyst"}
+
+
+def test_degree_fit_tag() -> None:
+    fit, related, other = classify(
+        [
+            job("Marine A", "Bachelor's degree in marine biology or a related field."),
+            job("Marine B", "B.S. in environmental science, ecology, or related."),
+            job("Marine C", "Degree in accounting preferred."),
+        ]
+    )
+    assert "degree-fit" in fit.tags and "degree-fit" in related.tags
+    assert "degree-fit" not in other.tags
