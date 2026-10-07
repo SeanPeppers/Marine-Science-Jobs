@@ -74,3 +74,14 @@ def test_merge() -> None:
         out["Kept"].first_seen == "2026-09-20" and out["Kept"].last_seen == "2026-10-01"
     )
     assert out["Gone"].closed and not out["Kept"].closed
+
+
+def test_scam_filter() -> None:
+    jobs = [
+        job("Marine A", "Interview on Telegram with our hiring manager."),
+        job("Marine B", "Send your resume to oceanjobs123@gmail.com."),
+        job("Marine C", "We will mail you a check to deposit for equipment."),
+        job("Marine D", "A $50 training fee is required."),
+        job("Marine E", "No experience required. Apply at noaa.gov."),
+    ]
+    assert titles(jobs) == {"Marine E"}

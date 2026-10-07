@@ -88,3 +88,14 @@ def test_haversine() -> None:
     assert geo.haversine_miles(0, 0, 0, 0) == 0
     # Tampa to Miami is ~205 miles great-circle.
     assert 195 < geo.haversine_miles(27.9506, -82.4572, 25.7617, -80.1918) < 215
+
+
+def test_remote_only(monkeypatch) -> None:  # type: ignore[no-untyped-def]
+    remote = job("Data Analyst", "Ocean data.")
+    remote.remote = True
+    monkeypatch.setattr(app_mod, "all_jobs", lambda: [*JOBS, remote])
+    resp = TestClient(app_mod.app, base_url="http://127.0.0.1:8000").post(
+        "/api/jobs", data={"remote_only": "true"}
+    )
+    assert resp.status_code == 200, resp.text
+    assert [j["title"] for j in resp.json()["jobs"]] == ["Data Analyst"]

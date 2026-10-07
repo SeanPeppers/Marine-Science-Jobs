@@ -91,6 +91,19 @@ CITIZEN_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Fake-job red flags (FTC job-scam guidance): off-platform chat, personal email, money moves.
+SCAM_RE = re.compile(
+    r"\b(?:telegram|whats ?app|wickr|signal app|google hangouts|"
+    r"[\w.+-]+@(?:gmail|yahoo|hotmail|outlook|aol|icloud|protonmail)\.com|"
+    r"text (?:us |me )?(?:to apply|your (?:resume|cv|name))|"
+    r"(?:cashier'?s? )?(?:check|cheque)s? (?:to deposit|will be (?:sent|mailed))|"
+    r"deposit (?:the |a )?(?:check|cheque)|reship\w*|package forwarding|"
+    r"(?:training|registration|application|processing|onboarding|starter kit) fee|"
+    r"purchase (?:your own )?(?:equipment|software) (?:from|through)|"
+    r"wire transfer|gift cards?|bitcoin|zelle|cash ?app|venmo)",
+    re.IGNORECASE,
+)
+
 SUBFIELDS: dict[str, list[str]] = {
     "marine biology": [
         "marine biolog",
@@ -242,7 +255,7 @@ def classify(jobs: list[Job]) -> list[Job]:
     out = []
     for job in jobs:
         marine = job.company.lower() in MARINE_EMPLOYERS or MARINE_RE.search(_text(job))
-        if not marine or _excluded(job):
+        if not marine or _excluded(job) or SCAM_RE.search(_text(job)):
             continue
         text = _text(job)
         tags = [

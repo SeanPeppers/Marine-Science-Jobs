@@ -7,7 +7,7 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 ## Settled decisions
 
 - Scope: all marine subfields, each job tagged with one `subfield`. Worldwide + remote.
-- Exclude: jobs requiring MS/PhD, or 3+ years experience, or senior/manager/director titles.
+- Exclude: jobs requiring MS/PhD, or 3+ years experience, or senior/manager/director titles, or with scam red flags (off-platform chat apps, personal email, check/fee/gift-card payment talk).
 - Tags: `temp` (seasonal/temporary/contract/term), `us-citizen` (citizenship or clearance required; flag, not exclude).
 - Rolling: no cycle. Mark `closed` when a source that ran successfully stops returning a job (per employer for ATS boards); no separate link check, since sources drop filled jobs themselves; delete 60 days after `last_seen` (the last day a source listed it).
 - Dedup: fuzzy match on normalized company + title + location (rapidfuzz ratio >= 90), URL as tiebreaker.
@@ -15,7 +15,7 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 - README table: Company | Role | Location | Subfield | Tags | Apply | Posted. No resume data, ever.
 - Sources split: **keyless sources run in Actions**; **keyed sources run only in the local app with the user's own free keys** (`.env`, gitignored). Free tiers only. Respect robots.txt and ToS; follow the `api-integration-discipline` skill.
 - Local app: FastAPI + one static HTML page with vanilla JS, `uv run marine-jobs` opens `http://localhost:8000`.
-  - Location: city search box (offline GeoNames cities1000, CC-BY) + radius slider in miles + "include remote" toggle.
+  - Location: city search box (offline GeoNames cities1000, CC-BY) + radius slider in miles + "include remote" and "remote only" toggles.
   - Resume: PDF only, parsed in memory, never written to disk. Non-PDF or unreadable PDF gives a plain error message.
   - Matching: TF-IDF cosine (scikit-learn) resume vs job title+description, plus bonus for matched marine skill keywords. Score 0-100.
   - Sort: group by posting day, newest day first; within a day, highest match first. Hide below a min-match threshold (slider).
