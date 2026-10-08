@@ -49,7 +49,7 @@ def main() -> None:
     store = pipeline.load_store(STORE)
     # Drop stored jobs the current rules reject, rather than showing them as closed: ones
     # still posted (in raw) but not kept, and ones from employers no longer polled.
-    kept_urls = {j.url for j in unique}
+    kept_urls = {j.url for j in kept}  # pre-dedup, so merged duplicates still count
     raw_urls = {j.url for j in raw}
     polled = {e["name"] for e in ats.employers()}
     store = [
