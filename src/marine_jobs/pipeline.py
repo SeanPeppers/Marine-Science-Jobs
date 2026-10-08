@@ -44,16 +44,19 @@ ADJACENT_TITLE_RE = re.compile(
     r"field (?:tech\w*|crew|assistant)|nepa|sustainability|climate)\b",
     re.IGNORECASE,
 )
-# Adjacent-title matches that need a different degree (archaeology, engineering) or are safety roles.
+# Adjacent-title matches that are safety, mechanic, or lab-biology roles.
 ADJACENT_EXCLUDE_RE = re.compile(
-    r"\b(?:archaeolog\w*|paleontolog\w*|health (?:and|&) safety|ehs|engineer\w*|"
-    r"mechanic|computational|molecular)\b",
+    r"\b(?:health (?:and|&) safety|ehs|mechanic|computational|molecular)\b",
     re.IGNORECASE,
 )
-# Business roles that "marine"/"ocean" words pull in (marine insurance, ocean freight, sales).
+# Roles a marine-science bachelor's does not qualify for, even at ocean employers: business
+# (marine insurance, ocean freight, sales), engineering and software, ship's crew and galley
+# (licensed), hospitality and warehouse, and other degrees (archaeology, chemistry).
 NON_SCIENCE_TITLE_RE = re.compile(
     r"\b(?:sales|adjuster|underwriter|insurance|freight|import|export|tutor|legal|attorney|"
-    r"paralegal|philanthropy|fundrais\w*|accountant|recruiter)\b",
+    r"paralegal|philanthropy|fundrais\w*|accountant|receivable|recruiter|engineer\w*|"
+    r"developer|software|programmer|chef|cook|galley|(?<!land )steward|deckhand|mate|seafarer|oiler|"
+    r"qmed|licensed|host|driver|packer|facilities|archaeolog\w*|paleontolog\w*|chemist)\b",
     re.IGNORECASE,
 )
 # Broad aggregators whose postings come from any industry: match relevance on the title only.
@@ -100,7 +103,8 @@ YEARS_RE = re.compile(
 SENIOR_TITLE_RE = re.compile(
     r"\b(?:senior|supervisory|sr\b\.?|lead|principal|manager|director|head of|chief|"
     r"vice president|vp|staff (?:scientist|engineer)|managing|partner|leader|professor|"
-    r"faculty|instructor|lecturer|fellow|volunteer|work study)\b|\bpost-?doc",
+    r"faculty|instructor|lecturer|fellow|volunteer|work study|supervisor|curator|expert|"
+    r"intermediate|middle)\b|\bpost-?doc",
     re.IGNORECASE,
 )
 

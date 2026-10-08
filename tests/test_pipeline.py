@@ -166,3 +166,20 @@ def test_degree_fit_tag() -> None:
     )
     assert "degree-fit" in fit.tags and "degree-fit" in related.tags
     assert "degree-fit" not in other.tags
+
+
+def test_unqualified_roles_at_marine_employers() -> None:
+    jobs = [
+        job("Software Engineer, Autonomous Systems", "Ocean drones."),
+        job("Shipboard Head Chef", "Expedition ship."),
+        job("Licensed Deckhand", "Expedition ship."),
+        job("Supervisor, Water Quality", "Aquarium."),
+        job("Coastal Land Steward", "Preserve."),
+        job("Marine Technician I", "Ocean survey."),
+        job("Hydrographic Surveyor", "Ocean survey."),
+    ]
+    assert titles(jobs) == {
+        "Marine Technician I",
+        "Hydrographic Surveyor",
+        "Coastal Land Steward",
+    }

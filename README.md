@@ -2,7 +2,8 @@
 
 Entry-level, full-time jobs for people with a marine science or related bachelor's degree
 (about one year of experience): marine science roles plus related ones a graduate can get (GIS, environmental, water quality, wildlife,
-conservation), collected daily. Jobs that require an MS/PhD, 3+ years of experience, or a senior title are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
+conservation), collected daily. Jobs that require an MS/PhD, 3+ years of experience, a senior title, or a different
+qualification (engineering, software, licensed ship crew, galley, business roles) are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
 Jobs are US-based or remote; on-site jobs outside the US are left out, and so are remote jobs abroad
 that list pay under about $40k a year.
 Each job is tagged with one subfield: marine biology, oceanography, fisheries, aquaculture,
