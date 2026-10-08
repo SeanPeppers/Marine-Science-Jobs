@@ -1,24 +1,6 @@
 [
  {
   "closed": false,
-  "company": "Verdantas",
-  "description": "Welcome to Verdantas, where innovation meets sustainability, and your career finds purpose!\nAt Verdantas, we’re redefining environmental consulting and sustainable engineering through our use of cutting-edge modeling and digital technology and our genuine commitment to people. Our work spans high-gr",
-  "first_seen": "2026-10-07",
-  "id": "f1192d05fde88402",
-  "last_seen": "2026-10-08",
-  "location": "Orlando FL",
-  "posted": "2026-10-08",
-  "remote": false,
-  "source": "workday",
-  "subfield": "environmental consulting",
-  "tags": [
-   "degree-fit"
-  ],
-  "title": "Environmental Scientist II",
-  "url": "https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Orlando-FL/Environmental-Scientist-II_R-101204"
- },
- {
-  "closed": false,
   "company": "Fugro",
   "description": "Job Description\nThe Satellite Positioning Support Specialist is responsible to interact directly with Satellite Positioning clients to enable subscription services, generate client Invoices and process payments during a twelve (12) hour shift. Additionally, provide remote technical support on OmniST",
   "first_seen": "2026-10-01",
@@ -32,6 +14,62 @@
   "tags": [],
   "title": "Satellite Positioning Support Specialist - Marine",
   "url": "https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Satellite-Positioning-Support-Specialist---Marine_R0031921"
+ },
+ {
+  "closed": false,
+  "company": "The Maritime Aquarium",
+  "description": "Organization Background\nThe Maritime Aquarium’s mission is to ignite a connection to Long Island Sound and the ocean to enrich the lives of all people and inspire action to protect our blue planet. For 38 years, the Aquarium has played a significant role in shaping the landscape of Norwalk and the r",
+  "first_seen": "2026-10-07",
+  "id": "e14598e18720b26b",
+  "last_seen": "2026-10-08",
+  "location": "Norwalk, Connecticut",
+  "posted": "2026-10-08",
+  "remote": false,
+  "source": "greenhouse",
+  "subfield": "education & aquarium",
+  "tags": [
+   "degree-fit",
+   "temp"
+  ],
+  "title": "Part Time Aquarist - Reptiles, Birds, and Program Animals",
+  "url": "https://job-boards.greenhouse.io/themaritimeaquarium/jobs/5371680008"
+ },
+ {
+  "closed": false,
+  "company": "Oregon State University",
+  "description": "Department:CEOAS\nSpecial Instructions to Applicants:\nWhen applying you will be required to attach the following electronic documents:\nA Resume\nA Cover Letter\nFor additional information please contact: Edward Dever at Edward.dever@oregonstate.edu\nWe are an Equal Opportunity Employer, including disabi",
+  "first_seen": "2026-10-08",
+  "id": "645e0740ec202210",
+  "last_seen": "2026-10-08",
+  "location": "",
+  "posted": "2026-10-08",
+  "remote": false,
+  "source": "workday",
+  "subfield": "oceanography",
+  "tags": [
+   "degree-fit",
+   "us-citizen"
+  ],
+  "title": "Ocean Mooring Student Technical Assistant",
+  "url": "https://oregonstate.wd501.myworkdayjobs.com/osu_careers_site/job/Corvallis-Main-Campus/Ocean-Mooring-Student-Technical-Assistant_JR0001512"
+ },
+ {
+  "closed": false,
+  "company": "Woolpert",
+  "description": "We seek to move the world forward through innovative thinking.\nWoolpert is an award-winning, global leader in architecture, engineering, and geospatial services. We blend design excellence with cutting-edge technology to deliver exceptional client value. Our team is passionate about their work and c",
+  "first_seen": "2026-10-08",
+  "id": "5311d30dcf1dacdd",
+  "last_seen": "2026-10-08",
+  "location": "LaPorte, Texas",
+  "posted": "2026-10-08",
+  "remote": false,
+  "source": "greenhouse",
+  "subfield": "environmental consulting",
+  "tags": [
+   "degree-fit"
+  ],
+  "title": "Hydrographic Survey Specialist",
+  "url": "https://job-boards.greenhouse.io/woolpert/jobs/4434117009"
  },
  {
   "closed": false,
@@ -51,12 +89,30 @@
  },
  {
   "closed": false,
-  "company": "ERM",
-  "description": "ERM is currently hiring a Casual Part-time, Consulting Associate, Field Biologist to support biological field surveys and environmental monitoring on an as-needed basis throughout Northern California, including, but not limited to, San Francisco, Santa Rosa, Santa Cruz, Oakland, the East Bay, Fort B",
-  "first_seen": "2026-10-07",
-  "id": "ce30354c588f17e5",
+  "company": "Celerity Consulting Group",
+  "description": "Pay: $28 - $34 per hour\nJob Title: GIS Specialist \nCompany: Celerity\nLocation: Remote (work from home eligible) West Coast based with occasional hybrid cadence for meetings and workshops within the San Francisco Bay Area, CA.\nJob Type: Hourly\nAbout Celerity\nCelerity is an agile risk optimization com",
+  "first_seen": "2026-10-08",
+  "id": "1829da823b91ed55",
   "last_seen": "2026-10-08",
-  "location": "Walnut Creek, California",
+  "location": "Remote - United States",
+  "posted": "2026-10-08",
+  "remote": true,
+  "source": "himalayas",
+  "subfield": "marine data & GIS",
+  "tags": [
+   "degree-fit"
+  ],
+  "title": "GIS Specialist",
+  "url": "https://himalayas.app/companies/celerity-consulting-group/jobs/gis-specialist"
+ },
+ {
+  "closed": false,
+  "company": "Verdantas",
+  "description": "Welcome to Verdantas, where innovation meets sustainability, and your career finds purpose!\nAt Verdantas, we’re redefining environmental consulting and sustainable engineering through our use of cutting-edge modeling and digital technology and our genuine commitment to people. Our work spans high-gr",
+  "first_seen": "2026-10-07",
+  "id": "f1192d05fde88402",
+  "last_seen": "2026-10-08",
+  "location": "Orlando FL",
   "posted": "2026-10-07",
   "remote": false,
   "source": "workday",
@@ -64,8 +120,8 @@
   "tags": [
    "degree-fit"
   ],
-  "title": "Consulting Associate, Field Biologist",
-  "url": "https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Consulting-Associate--Field-Biologist_R00032296-1"
+  "title": "Environmental Scientist II",
+  "url": "https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Orlando-FL/Environmental-Scientist-II_R-101204"
  },
  {
   "closed": false,
@@ -84,6 +140,24 @@
   ],
   "title": "GIS Analyst",
   "url": "https://himalayas.app/companies/forsite/jobs/gis-analyst"
+ },
+ {
+  "closed": false,
+  "company": "ERM",
+  "description": "ERM is currently hiring a Casual Part-time, Consulting Associate, Field Biologist to support biological field surveys and environmental monitoring on an as-needed basis throughout Northern California, including, but not limited to, San Francisco, Santa Rosa, Santa Cruz, Oakland, the East Bay, Fort B",
+  "first_seen": "2026-10-07",
+  "id": "ce30354c588f17e5",
+  "last_seen": "2026-10-08",
+  "location": "Walnut Creek, California",
+  "posted": "2026-10-06",
+  "remote": false,
+  "source": "workday",
+  "subfield": "environmental consulting",
+  "tags": [
+   "degree-fit"
+  ],
+  "title": "Consulting Associate, Field Biologist",
+  "url": "https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Consulting-Associate--Field-Biologist_R00032296-1"
  },
  {
   "closed": false,
@@ -264,24 +338,6 @@
   "url": "https://himalayas.app/companies/stantec/jobs/on-call-biologist"
  },
  {
-  "closed": false,
-  "company": "The Nature Conservancy",
-  "description": "Application Instructions:\nPlease note that the application period ends at 12:00 am Eastern Time on the due date listed and be mindful that the deadline in your location may be earlier due to the difference in time zone. \nWhat We Can Achieve Together:\nLocated 1,000 miles south of Hawai'i, TNC's Palmy",
-  "first_seen": "2026-10-07",
-  "id": "2fe26d56a3be6ba0",
-  "last_seen": "2026-10-08",
-  "location": "Palmyra, Hawaii",
-  "posted": "2026-10-03",
-  "remote": false,
-  "source": "workday",
-  "subfield": "conservation & policy",
-  "tags": [
-   "temp"
-  ],
-  "title": "Bird Conservation Assistant, Palmyra Atoll",
-  "url": "https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Palmyra-Hawaii/Bird-Conservation-Assistant--Palmyra-Atoll_JR104053"
- },
- {
   "closed": true,
   "company": "Estrie Marine",
   "description": "Job number: 15889613\nLocation: Sherbrooke (QC) \nEmployer: Estrie Marine\nSalary: $20.00 to $40.00 hourly",
@@ -452,6 +508,24 @@
  },
  {
   "closed": false,
+  "company": "The Nature Conservancy",
+  "description": "Application Instructions:\nPlease note that the application period ends at 12:00 am Eastern Time on the due date listed and be mindful that the deadline in your location may be earlier due to the difference in time zone. \nWhat We Can Achieve Together:\nLocated 1,000 miles south of Hawai'i, TNC's Palmy",
+  "first_seen": "2026-10-07",
+  "id": "2fe26d56a3be6ba0",
+  "last_seen": "2026-10-08",
+  "location": "Palmyra, Hawaii",
+  "posted": "2026-10-02",
+  "remote": false,
+  "source": "workday",
+  "subfield": "conservation & policy",
+  "tags": [
+   "temp"
+  ],
+  "title": "Bird Conservation Assistant, Palmyra Atoll",
+  "url": "https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Palmyra-Hawaii/Bird-Conservation-Assistant--Palmyra-Atoll_JR104053"
+ },
+ {
+  "closed": false,
   "company": "County of Sonoma",
   "description": "Water Agency Environmental Specialist\n$96,007.52 - $116,711.75 per year -- County of Sonoma",
   "first_seen": "2026-10-07",
@@ -564,43 +638,6 @@
  },
  {
   "closed": false,
-  "company": "The Maritime Aquarium",
-  "description": "Organization Background\nThe Maritime Aquarium’s mission is to ignite a connection to Long Island Sound and the ocean to enrich the lives of all people and inspire action to protect our blue planet. For 38 years, the Aquarium has played a significant role in shaping the landscape of Norwalk and the r",
-  "first_seen": "2026-10-07",
-  "id": "e14598e18720b26b",
-  "last_seen": "2026-10-08",
-  "location": "Norwalk, Connecticut",
-  "posted": "2026-09-30",
-  "remote": false,
-  "source": "greenhouse",
-  "subfield": "education & aquarium",
-  "tags": [
-   "degree-fit",
-   "temp"
-  ],
-  "title": "Part Time Aquarist - Reptiles, Birds, and Program Animals",
-  "url": "https://job-boards.greenhouse.io/themaritimeaquarium/jobs/5371680008"
- },
- {
-  "closed": false,
-  "company": "The Nature Conservancy",
-  "description": "What We Can Achieve Together:\nThe Coastal Fire Practitioner and Land Steward (CFPLS) supports prescribed fire implementation and land stewardship at the Splinter Hill Bog Office (Baldwin Co. AL) and on TNC and partner land congruent to Southern Deltas Business Unit (BU) coastal landscapes. The CFPLS",
-  "first_seen": "2026-10-07",
-  "id": "5d3f9e6449eb1505",
-  "last_seen": "2026-10-08",
-  "location": "Perdido, Alabama",
-  "posted": "2026-09-30",
-  "remote": false,
-  "source": "workday",
-  "subfield": "coastal & estuarine ecology",
-  "tags": [
-   "temp"
-  ],
-  "title": "Coastal Fire Practitioner and Land Steward",
-  "url": "https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Perdido-Alabama/Coastal-Fire-Practitioner-and-Land-Steward_JR104052"
- },
- {
-  "closed": false,
   "company": "Lower Colorado River Authority (LCRA)",
   "description": "Land & Wildlife Field Technician I (Entry Level) LCRA\n$24.84 - $30.36 per hour -- Lower Colorado River Authority (LCRA)",
   "first_seen": "2026-10-07",
@@ -617,40 +654,21 @@
  },
  {
   "closed": false,
-  "company": "WHOI",
-  "description": "Job SummaryWoods Hole Oceanographic Institution is currently searching for a Research Assistant I/II. This is a regular, full-time, exempt position, and is eligible for benefits. The initial appointment will be for one year with the possibility of a one-year extension, contingent on additional fundi",
-  "first_seen": "2026-10-01",
-  "id": "de6015f3192f14ed",
-  "last_seen": "2026-10-08",
-  "location": "Fye Laboratory",
-  "posted": "2026-09-29",
-  "remote": false,
-  "source": "workday",
-  "subfield": "oceanography",
-  "tags": [
-   "degree-fit",
-   "temp"
-  ],
-  "title": "Research Assistant I/II",
-  "url": "https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Fye-Laboratory/Research-Assistant-I-II_JR100640"
- },
- {
-  "closed": false,
-  "company": "ERM",
-  "description": "ERM is hiring Field-Based Inspectors to perform residential water service line investigations and inspections in support of a utility service line inventory program. Inspectors will work in teams of two to determine water service line materials and collect data needed to support regulatory complianc",
+  "company": "The Nature Conservancy",
+  "description": "What We Can Achieve Together:\nThe Coastal Fire Practitioner and Land Steward (CFPLS) supports prescribed fire implementation and land stewardship at the Splinter Hill Bog Office (Baldwin Co. AL) and on TNC and partner land congruent to Southern Deltas Business Unit (BU) coastal landscapes. The CFPLS",
   "first_seen": "2026-10-07",
-  "id": "916f6aeab0b86caf",
+  "id": "5d3f9e6449eb1505",
   "last_seen": "2026-10-08",
-  "location": "United States of America",
+  "location": "Perdido, Alabama",
   "posted": "2026-09-29",
   "remote": false,
   "source": "workday",
-  "subfield": "marine data & GIS",
+  "subfield": "coastal & estuarine ecology",
   "tags": [
    "temp"
   ],
-  "title": "Environmental Field Inspectors (Field Based)",
-  "url": "https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Rolling-Meadows-Illinois/Environmental-Field-Inspectors--Field-Based-_R00032181"
+  "title": "Coastal Fire Practitioner and Land Steward",
+  "url": "https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Perdido-Alabama/Coastal-Fire-Practitioner-and-Land-Steward_JR104052"
  },
  {
   "closed": false,
@@ -702,6 +720,25 @@
  },
  {
   "closed": false,
+  "company": "WHOI",
+  "description": "Job SummaryWoods Hole Oceanographic Institution is currently searching for a Research Assistant I/II. This is a regular, full-time, exempt position, and is eligible for benefits. The initial appointment will be for one year with the possibility of a one-year extension, contingent on additional fundi",
+  "first_seen": "2026-10-01",
+  "id": "de6015f3192f14ed",
+  "last_seen": "2026-10-08",
+  "location": "Fye Laboratory",
+  "posted": "2026-09-28",
+  "remote": false,
+  "source": "workday",
+  "subfield": "oceanography",
+  "tags": [
+   "degree-fit",
+   "temp"
+  ],
+  "title": "Research Assistant I/II",
+  "url": "https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Fye-Laboratory/Research-Assistant-I-II_JR100640"
+ },
+ {
+  "closed": true,
   "company": "Environmental Science Associates",
   "description": "Environmental Science Associates (ESA) is a 100% employee-owned environmental consulting firm. We plan, design, permit, mitigate, and restore for projects across our communities, infrastructure systems, open spaces, and wildlands. We are 50 years strong in 21 offices across California, the Pacific N",
   "first_seen": "2026-10-01",
@@ -720,10 +757,28 @@
  },
  {
   "closed": false,
-  "company": "Pheasants Forever, Inc., and Quail Forever",
-  "description": "Farm Bill Wildlife Biologist I, II, or III\n$45,000 - $53,000 per year -- Pheasants Forever, Inc., and Quail Forever",
+  "company": "ERM",
+  "description": "ERM is hiring Field-Based Inspectors to perform residential water service line investigations and inspections in support of a utility service line inventory program. Inspectors will work in teams of two to determine water service line materials and collect data needed to support regulatory complianc",
   "first_seen": "2026-10-07",
-  "id": "ab1c1b76625ab1de",
+  "id": "916f6aeab0b86caf",
+  "last_seen": "2026-10-08",
+  "location": "United States of America",
+  "posted": "2026-09-28",
+  "remote": false,
+  "source": "workday",
+  "subfield": "marine data & GIS",
+  "tags": [
+   "temp"
+  ],
+  "title": "Environmental Field Inspectors (Field Based)",
+  "url": "https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Rolling-Meadows-Illinois/Environmental-Field-Inspectors--Field-Based-_R00032181"
+ },
+ {
+  "closed": false,
+  "company": "Pheasants Forever, Inc., and Quail Forever",
+  "description": "Farm Bill Wildlife Biologist I, II, or III\n$40,000 - $49,000 per year -- Pheasants Forever, Inc., and Quail Forever",
+  "first_seen": "2026-10-07",
+  "id": "2addafd1fa349b64",
   "last_seen": "2026-10-08",
   "location": "",
   "posted": "2026-09-28",
@@ -732,7 +787,7 @@
   "subfield": "marine biology",
   "tags": [],
   "title": "Farm Bill Wildlife Biologist I, II, or III",
-  "url": "https://www.conservationjobboard.com/job-listing-farm-bill-wildlife-biologist-i-ii-or-iii-scobey-montana/5056837464"
+  "url": "https://www.conservationjobboard.com/job-listing-farm-bill-wildlife-biologist-i-ii-or-iii-selby-mound-city-or-leola--wall-south-dakota/9268428187"
  },
  {
   "closed": false,
@@ -965,7 +1020,7 @@
   "url": "https://www.conservationjobboard.com/job-listing-coastal-planning-and-policy-strategist-brunswick-georgia/9328801578"
  },
  {
-  "closed": false,
+  "closed": true,
   "company": "Wyoming Game & Fish",
   "description": "Fish Culturist\n$5,158.40 - $5,730.40 per month -- Wyoming Game & Fish",
   "first_seen": "2026-10-01",
@@ -1177,22 +1232,6 @@
  },
  {
   "closed": false,
-  "company": "The Nature Conservancy",
-  "description": "What We Can Achieve Together:\nOver eighty percent of North American ecosystems depend on fire for essential ecological functions. Indigenous people have used fire for millennia and contemporary land managers continue the practice, although not to the same degree or effect. The Nature Conservancy and",
-  "first_seen": "2026-10-07",
-  "id": "0a4a43c3059e6e94",
-  "last_seen": "2026-10-08",
-  "location": "North Charleston, South Carolina",
-  "posted": "2026-09-17",
-  "remote": false,
-  "source": "workday",
-  "subfield": "coastal & estuarine ecology",
-  "tags": [],
-  "title": "SC Coast Burn Crew Member",
-  "url": "https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/North-Charleston-South-Carolina/SC-Coast-Burn-Crew-Member_JR103902"
- },
- {
-  "closed": false,
   "company": "cFocus Software Incorporated",
   "description": "cFocus Software seeks a Jr. Geospatial Analyst to join our program supporting the Department of Homeland Security (DHS). This position is remote. This position requires a Public Trust Clearance.\nQualifications:\nBachelor’s or master’s degree in IT, Computer Science, Geography or a related field.\n1-3 ",
   "first_seen": "2026-10-07",
@@ -1208,6 +1247,22 @@
   ],
   "title": "Jr. Geospatial Analyst - DHS",
   "url": "https://himalayas.app/companies/cfocus-software-incorporated/jobs/jr-geospatial-analyst-dhs-881749494"
+ },
+ {
+  "closed": false,
+  "company": "The Nature Conservancy",
+  "description": "What We Can Achieve Together:\nOver eighty percent of North American ecosystems depend on fire for essential ecological functions. Indigenous people have used fire for millennia and contemporary land managers continue the practice, although not to the same degree or effect. The Nature Conservancy and",
+  "first_seen": "2026-10-07",
+  "id": "0a4a43c3059e6e94",
+  "last_seen": "2026-10-08",
+  "location": "North Charleston, South Carolina",
+  "posted": "2026-09-16",
+  "remote": false,
+  "source": "workday",
+  "subfield": "coastal & estuarine ecology",
+  "tags": [],
+  "title": "SC Coast Burn Crew Member",
+  "url": "https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/North-Charleston-South-Carolina/SC-Coast-Burn-Crew-Member_JR103902"
  },
  {
   "closed": false,
@@ -1261,24 +1316,6 @@
  },
  {
   "closed": false,
-  "company": "ICF",
-  "description": "Wildlife Biologist\nRemote – Texas\nPreference for Austin, Dallas/Fort Worth, Houston, or San Antonio\nICF is growing in Texas, and we want you to join in our growth! \nICF is seeking a motivated, early-career Wildlife Biologist to join our team and assist in conducting wetland delineations and biologic",
-  "first_seen": "2026-10-01",
-  "id": "35054b88d62289be",
-  "last_seen": "2026-10-08",
-  "location": "United States of America",
-  "posted": "2026-09-12",
-  "remote": false,
-  "source": "workday",
-  "subfield": "environmental consulting",
-  "tags": [
-   "degree-fit"
-  ],
-  "title": "Wetland Biologist",
-  "url": "https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Austin-TX/Wetland-Biologist_R2603039"
- },
- {
-  "closed": false,
   "company": "Xentity",
   "description": "Pay: $65000 - $110000 per year\nStart Date:\nAnticipated and upcoming opportunities; start dates vary based on contract award, onboarding, and client needJob Type:Full-TimeLabor Category:\nArch- GIS Specialist/Analyst, Data Management Specialist, GIS System Specialist, or related mid-to-senior geospati",
   "first_seen": "2026-10-07",
@@ -1294,6 +1331,24 @@
   ],
   "title": "GIS, Geospatial Data & GIS Systems Support Opportunities",
   "url": "https://himalayas.app/companies/xentity/jobs/gis-geospatial-data-gis-systems-support-opportunities"
+ },
+ {
+  "closed": false,
+  "company": "ICF",
+  "description": "Wildlife Biologist\nRemote – Texas\nPreference for Austin, Dallas/Fort Worth, Houston, or San Antonio\nICF is growing in Texas, and we want you to join in our growth! \nICF is seeking a motivated, early-career Wildlife Biologist to join our team and assist in conducting wetland delineations and biologic",
+  "first_seen": "2026-10-01",
+  "id": "35054b88d62289be",
+  "last_seen": "2026-10-08",
+  "location": "United States of America",
+  "posted": "2026-09-11",
+  "remote": false,
+  "source": "workday",
+  "subfield": "environmental consulting",
+  "tags": [
+   "degree-fit"
+  ],
+  "title": "Wetland Biologist",
+  "url": "https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Austin-TX/Wetland-Biologist_R2603039"
  },
  {
   "closed": true,
@@ -1326,25 +1381,6 @@
   "tags": [],
   "title": "Environmental Education and Communications Associate",
   "url": "https://www.conservationjobboard.com/job-listing-environmental-communications--education-associate-mount-kisco-new-york/4693176563"
- },
- {
-  "closed": false,
-  "company": "ICF",
-  "description": "The Environmental Construction Coordinator serves as the primary point of contact between property owners, project teams, contractors, and stakeholders throughout project planning and construction activities.\nThis role is responsible for maintaining positive landowner relationships, coordinating acc",
-  "first_seen": "2026-10-07",
-  "id": "096a5a171bd5565b",
-  "last_seen": "2026-10-08",
-  "location": "Olympia, WA",
-  "posted": "2026-09-09",
-  "remote": false,
-  "source": "workday",
-  "subfield": "environmental consulting",
-  "tags": [
-   "degree-fit",
-   "temp"
-  ],
-  "title": "Environmental Construction Coordinator",
-  "url": "https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Olympia-WA/Environmental-Representative-Land-Liaison_R2602596-1"
  },
  {
   "closed": false,
@@ -1575,6 +1611,25 @@
   "tags": [],
   "title": "Shoals Marine Laboratory - Teaching Assistant (high school)",
   "url": "https://usnh.wd5.myworkdayjobs.com/Careers/job/University-of-New-Hampshire--Main-Campus/Shoals-Marine-Laboratory---Teaching-Assistant--high-school-_JR7471"
+ },
+ {
+  "closed": false,
+  "company": "ICF",
+  "description": "The Environmental Construction Coordinator serves as the primary point of contact between property owners, project teams, contractors, and stakeholders throughout project planning and construction activities.\nThis role is responsible for maintaining positive landowner relationships, coordinating acc",
+  "first_seen": "2026-10-07",
+  "id": "096a5a171bd5565b",
+  "last_seen": "2026-10-08",
+  "location": "Olympia, WA",
+  "posted": "2026-09-08",
+  "remote": false,
+  "source": "workday",
+  "subfield": "environmental consulting",
+  "tags": [
+   "degree-fit",
+   "temp"
+  ],
+  "title": "Environmental Construction Coordinator",
+  "url": "https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Olympia-WA/Environmental-Representative-Land-Liaison_R2602596-1"
  },
  {
   "closed": true,
