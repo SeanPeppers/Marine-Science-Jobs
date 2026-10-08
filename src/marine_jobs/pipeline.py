@@ -51,12 +51,15 @@ ADJACENT_EXCLUDE_RE = re.compile(
 )
 # Roles a marine-science bachelor's does not qualify for, even at ocean employers: business
 # (marine insurance, ocean freight, sales), engineering and software, ship's crew and galley
-# (licensed), hospitality and warehouse, and other degrees (archaeology, chemistry).
+# (licensed), hospitality and warehouse, plant operators, land surveying, other degrees
+# (archaeology, chemistry), and internships, which are usually for current students.
 NON_SCIENCE_TITLE_RE = re.compile(
     r"\b(?:sales|adjuster|underwriter|insurance|freight|import|export|tutor|legal|attorney|"
     r"paralegal|philanthropy|fundrais\w*|accountant|receivable|recruiter|engineer\w*|"
     r"developer|software|programmer|chef|cook|galley|(?<!land )steward|deckhand|mate|seafarer|oiler|"
-    r"qmed|licensed|host|driver|packer|facilities|archaeolog\w*|paleontolog\w*|chemist)\b",
+    r"qmed|licensed|host|driver|packer|facilities|logistics|composite|membrane|wastewater|"
+    r"pump|filtration|law enforcement|archaeolog\w*|paleontolog\w*|chemist|survey field tech\w*|"
+    r"distribution|adjunct|intern|internship)\b",
     re.IGNORECASE,
 )
 # Broad aggregators whose postings come from any industry: match relevance on the title only.
@@ -389,6 +392,9 @@ def _non_us(place: str) -> bool:
     return foreign
 
 
+CJK_RE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af]")
+
+
 PAY_FLOOR_USD = 40_000
 FX_TO_USD = {
     "$": 1.0,
@@ -419,7 +425,9 @@ def _annual_pay(text: str) -> float | None:
 
 def _location_ok(job: Job) -> bool:
     """US jobs (or unknown location) always; elsewhere only remote, and not below the pay floor."""
-    if not all(_non_us(part) for part in job.location.split(";")):
+    # Some boards hide the country in the title ("Intern Hiring - China", Japanese titles).
+    foreign_title = NON_US_RE.search(job.title) or CJK_RE.search(job.title)
+    if not foreign_title and not all(_non_us(part) for part in job.location.split(";")):
         return True
     if not (job.remote or "remote" in job.location.lower()):
         return False

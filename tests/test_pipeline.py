@@ -183,3 +183,19 @@ def test_unqualified_roles_at_marine_employers() -> None:
         "Hydrographic Surveyor",
         "Coastal Land Steward",
     }
+
+
+def test_title_scrub() -> None:
+    jobs = [
+        job("Survey Field Technician", "Coastal surveys."),
+        job("Wastewater Treatment Operator (or Trainee)", "Coastal town."),
+        job("Blue Carbon Intern", "Coastal wetlands."),
+        job(
+            "2025 Sustainability Intern Hiring - China",
+            "Coastal.",
+            location="2 Locations",
+        ),
+        job("環境コンサルタント Marine Consultant", "Coastal.", location="2 Locations"),
+        job("Coastal Field Technician", "Coastal surveys."),
+    ]
+    assert titles(jobs) == {"Coastal Field Technician"}

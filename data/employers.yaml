@@ -36,7 +36,6 @@
 - {name: SeaWorld Entertainment, ats: workday, host: seaworldentertainment.wd1.myworkdayjobs.com, tenant: seaworldentertainment, site: SEA}
 - {name: William & Mary (VIMS), ats: workday, host: williammary.wd12.myworkdayjobs.com, tenant: williammary, site: WM}
 - {name: Woolpert, ats: greenhouse, slug: woolpert}
-- {name: SGS, ats: smartrecruiters, slug: sgs}
 - {name: SLR Consulting, ats: workday, host: slrconsulting.wd103.myworkdayjobs.com, tenant: slrconsulting, site: SLRCareers}
 - {name: Verdantas, ats: workday, host: verdantas.wd108.myworkdayjobs.com, tenant: verdantas, site: Verdantas}
 # Not pollable yet (no collector for their ATS): Ocean Infinity (workable ocean-infinity),
@@ -48,7 +47,8 @@
 # Tried and dropped (no relevant jobs passed the filter in a test run): Equinor, Avangrid,
 # National Geographic, Overstory, Carbon Direct, Cloverly, Albedo, HawkEye 360, Sylvera, ICEYE,
 # Mapbox, Charm Industrial, Sierra Club, Xylem; mostly off-topic: California Academy of Sciences,
-# BlackSky, Muon Space, Esri, Isometric, Amentum (defense), Eurofins (medical labs).
+# BlackSky, Muon Space, Esri, Isometric, Amentum (defense), Eurofins (medical labs),
+# SGS (cargo and commodity inspection; 4,600 postings for a handful of matches).
 # Unsupported ATS: Stantec (SelectMinds); Montrose and Veolia (Workday site not resolved).
 # Remote-first climate/nature-tech boards tried (no relevant jobs passed the filter): Arcadia,
 # Aurora Solar, Brimstone, Carbonfuture, Ceezer, Climatiq, Deep Sky, Enveritas, Evergreen Action,

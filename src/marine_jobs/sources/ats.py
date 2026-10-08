@@ -7,6 +7,7 @@ import logging
 import re
 import time
 from collections.abc import Callable
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -149,6 +150,60 @@ def _workday(client: httpx.Client, e: dict[str, Any]) -> list[Job]:
         if len(postings) < 20 or (total and len(jobs) >= total):
             break
     return list(jobs.values())
+
+
+LOCATIONS_COUNT_RE = re.compile(r"^\d+ Locations$")
+
+
+def _workday_detail(client: httpx.Client, job: Job, e: dict[str, Any]) -> Job:
+    path = job.url.split(f"/{e['site']}", 1)[1]
+    info = _get(
+        client, f"https://{e['host']}/wday/cxs/{e['tenant']}/{e['site']}{path}"
+    )["jobPostingInfo"]
+    country = (info.get("country") or {}).get("descriptor", "")
+    # "3 Locations" hides where the job is; the posting's country is the best stand-in.
+    location = (
+        country if country and LOCATIONS_COUNT_RE.match(job.location) else job.location
+    )
+    remote = job.remote or "remote" in str(info.get("remoteType", "")).lower()
+    return replace(job, description=_text(info.get("jobDescription", "")),
+                   location=location, remote=remote)  # fmt: skip
+
+
+def _smartrecruiters_detail(client: httpx.Client, job: Job, e: dict[str, Any]) -> Job:
+    posting_id = job.url.rsplit("/", 1)[1]
+    sections = _get(
+        client,
+        f"https://api.smartrecruiters.com/v1/companies/{e['slug']}/postings/{posting_id}",
+    )["jobAd"]["sections"]
+    parts = (
+        sections.get(k, {}).get("text", "")
+        for k in ("jobDescription", "qualifications")
+    )
+    return replace(job, description=_text("\n".join(parts)))
+
+
+DETAILS = {"workday": _workday_detail, "smartrecruiters": _smartrecruiters_detail}
+
+
+def describe(client: httpx.Client, jobs: list[Job]) -> list[Job]:
+    """Fill descriptions that list endpoints omit (Workday, SmartRecruiters).
+
+    Run on already-classified jobs only: one request per job, so classify first keeps the
+    count to the relevant few rather than every posting on large boards.
+    """
+    employers = {e["name"]: e for e in yaml.safe_load(EMPLOYERS.read_text()) or []}
+    out = []
+    for job in jobs:
+        detail = DETAILS.get(job.source)
+        e = employers.get(job.company)
+        if detail and e and not job.description:
+            try:
+                job = detail(client, job, e)
+            except Exception as exc:  # noqa: BLE001 - keep the job without a description
+                log.warning("%s detail failed for %s: %s", job.source, job.url, exc)
+        out.append(job)
+    return out
 
 
 COLLECTORS: dict[str, Callable[[httpx.Client, dict[str, Any]], list[Job]]] = {

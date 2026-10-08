@@ -31,15 +31,19 @@ def main() -> None:
     ) as client:
         feed_jobs = feeds.fetch(client)
         ats_jobs = ats.fetch(client)
-    log.info("feeds: %d fetched, ats: %d fetched", len(feed_jobs), len(ats_jobs))
-    raw = feed_jobs + ats_jobs
+        log.info("feeds: %d fetched, ats: %d fetched", len(feed_jobs), len(ats_jobs))
+        raw = feed_jobs + ats_jobs
+        kept = pipeline.classify(raw)
+        log.info("classify: %d -> %d", len(raw), len(kept))
+        # Re-classify once descriptions are in, so experience and degree rules can apply.
+        described = pipeline.classify(ats.describe(client, kept))
+        log.info("describe + classify: %d -> %d", len(kept), len(described))
+        kept = described
     # A failed source returns nothing, so it is absent here and its stored jobs stay open.
     # ATS sources are tracked per employer so one failing board can't close another's jobs.
     sources_run = {j.source for j in feed_jobs} | {
         f"{j.source}:{j.company}" for j in ats_jobs
     }
-    kept = pipeline.classify(raw)
-    log.info("classify: %d -> %d", len(raw), len(kept))
     unique = pipeline.dedup(kept)
     log.info("dedup: %d -> %d", len(kept), len(unique))
     store = pipeline.load_store(STORE)
