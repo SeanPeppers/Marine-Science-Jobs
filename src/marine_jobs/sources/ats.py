@@ -186,17 +186,21 @@ def _smartrecruiters_detail(client: httpx.Client, job: Job, e: dict[str, Any]) -
 DETAILS = {"workday": _workday_detail, "smartrecruiters": _smartrecruiters_detail}
 
 
+def employers() -> list[dict[str, Any]]:
+    return yaml.safe_load(EMPLOYERS.read_text()) or []
+
+
 def describe(client: httpx.Client, jobs: list[Job]) -> list[Job]:
     """Fill descriptions that list endpoints omit (Workday, SmartRecruiters).
 
     Run on already-classified jobs only: one request per job, so classify first keeps the
     count to the relevant few rather than every posting on large boards.
     """
-    employers = {e["name"]: e for e in yaml.safe_load(EMPLOYERS.read_text()) or []}
+    by_name = {e["name"]: e for e in employers()}
     out = []
     for job in jobs:
         detail = DETAILS.get(job.source)
-        e = employers.get(job.company)
+        e = by_name.get(job.company)
         if detail and e and not job.description:
             try:
                 job = detail(client, job, e)
@@ -217,7 +221,7 @@ COLLECTORS: dict[str, Callable[[httpx.Client, dict[str, Any]], list[Job]]] = {
 
 def fetch(client: httpx.Client) -> list[Job]:
     jobs: list[Job] = []
-    for e in yaml.safe_load(EMPLOYERS.read_text()) or []:
+    for e in employers():
         try:
             got = COLLECTORS[e["ats"]](client, e)
         except Exception as exc:  # noqa: BLE001 - one bad employer must not stop the run

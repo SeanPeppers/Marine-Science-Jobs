@@ -59,7 +59,7 @@ NON_SCIENCE_TITLE_RE = re.compile(
     r"developer|software|programmer|chef|cook|galley|(?<!land )steward|deckhand|mate|seafarer|oiler|"
     r"qmed|licensed|host|driver|packer|facilities|logistics|composite|membrane|wastewater|"
     r"pump|filtration|law enforcement|archaeolog\w*|paleontolog\w*|chemist|survey field tech\w*|"
-    r"distribution|adjunct|intern|internship)\b",
+    r"distribution|adjunct|intern|internship|captain|advisor|cultural)\b",
     re.IGNORECASE,
 )
 # Broad aggregators whose postings come from any industry: match relevance on the title only.
