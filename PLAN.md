@@ -7,8 +7,8 @@ reads the user's resume (PDF, in memory only), filters by distance, and ranks.
 ## Settled decisions
 
 - Scope: all marine subfields, each job tagged with one `subfield`. US + remote anywhere (on-site non-US dropped; non-US remote dropped only if listed pay < $40k/yr; unknown locations kept). Also adjacent roles open to marine-science grads (GIS, environmental, water quality, ecology, wildlife, conservation), matched on title only.
-- Exclude: jobs requiring MS/PhD, or 3+ years experience, or senior/manager/director titles, or with scam red flags (off-platform chat apps, personal email, check/fee/gift-card payment talk).
-- Tags: `temp` (seasonal/temporary/contract/term), `us-citizen` (citizenship or clearance required; flag, not exclude).
+- Exclude: jobs requiring MS/PhD, or 3+ years experience, or senior/manager/director titles (also supervisor, curator, intermediate), roles the degree does not qualify for (engineering, software, licensed crew, galley, hospitality, business, archaeology, chemistry), or with scam red flags (off-platform chat apps, personal email, check/fee/gift-card payment talk).
+- Tags: `temp` (seasonal/temporary/contract/term), `us-citizen` (citizenship or clearance required; flag, not exclude), `degree-fit` (posting names a marine science or related bachelor's field).
 - Rolling: no cycle. Mark `closed` when a source that ran successfully stops returning a job (per employer for ATS boards); no separate link check, since sources drop filled jobs themselves; delete 60 days after `last_seen` (the last day a source listed it).
 - Dedup: fuzzy match on normalized company + title + location (rapidfuzz ratio >= 90), URL as tiebreaker.
 - Cron: daily 12:00 UTC on GitHub Actions; commits `data/jobs.json` + README table.

@@ -154,3 +154,48 @@ def test_aggregator_noise() -> None:
         job("Jr. Geospatial Analyst", company="Acme", source="himalayas"),
     ]
     assert titles(jobs) == {"Jr. Geospatial Analyst"}
+
+
+def test_degree_fit_tag() -> None:
+    fit, related, other = classify(
+        [
+            job("Marine A", "Bachelor's degree in marine biology or a related field."),
+            job("Marine B", "B.S. in environmental science, ecology, or related."),
+            job("Marine C", "Degree in accounting preferred."),
+        ]
+    )
+    assert "degree-fit" in fit.tags and "degree-fit" in related.tags
+    assert "degree-fit" not in other.tags
+
+
+def test_unqualified_roles_at_marine_employers() -> None:
+    jobs = [
+        job("Software Engineer, Autonomous Systems", "Ocean drones."),
+        job("Shipboard Head Chef", "Expedition ship."),
+        job("Licensed Deckhand", "Expedition ship."),
+        job("Supervisor, Water Quality", "Aquarium."),
+        job("Coastal Land Steward", "Preserve."),
+        job("Marine Technician I", "Ocean survey."),
+        job("Hydrographic Surveyor", "Ocean survey."),
+    ]
+    assert titles(jobs) == {
+        "Marine Technician I",
+        "Hydrographic Surveyor",
+        "Coastal Land Steward",
+    }
+
+
+def test_title_scrub() -> None:
+    jobs = [
+        job("Survey Field Technician", "Coastal surveys."),
+        job("Wastewater Treatment Operator (or Trainee)", "Coastal town."),
+        job("Blue Carbon Intern", "Coastal wetlands."),
+        job(
+            "2025 Sustainability Intern Hiring - China",
+            "Coastal.",
+            location="2 Locations",
+        ),
+        job("環境コンサルタント Marine Consultant", "Coastal.", location="2 Locations"),
+        job("Coastal Field Technician", "Coastal surveys."),
+    ]
+    assert titles(jobs) == {"Coastal Field Technician"}

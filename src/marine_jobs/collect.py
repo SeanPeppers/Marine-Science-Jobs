@@ -31,18 +31,33 @@ def main() -> None:
     ) as client:
         feed_jobs = feeds.fetch(client)
         ats_jobs = ats.fetch(client)
-    log.info("feeds: %d fetched, ats: %d fetched", len(feed_jobs), len(ats_jobs))
-    raw = feed_jobs + ats_jobs
+        log.info("feeds: %d fetched, ats: %d fetched", len(feed_jobs), len(ats_jobs))
+        raw = feed_jobs + ats_jobs
+        kept = pipeline.classify(raw)
+        log.info("classify: %d -> %d", len(raw), len(kept))
+        # Re-classify once descriptions are in, so experience and degree rules can apply.
+        described = pipeline.classify(ats.describe(client, kept))
+        log.info("describe + classify: %d -> %d", len(kept), len(described))
+        kept = described
     # A failed source returns nothing, so it is absent here and its stored jobs stay open.
     # ATS sources are tracked per employer so one failing board can't close another's jobs.
     sources_run = {j.source for j in feed_jobs} | {
         f"{j.source}:{j.company}" for j in ats_jobs
     }
-    kept = pipeline.classify(raw)
-    log.info("classify: %d -> %d", len(raw), len(kept))
     unique = pipeline.dedup(kept)
     log.info("dedup: %d -> %d", len(kept), len(unique))
     store = pipeline.load_store(STORE)
+    # Drop stored jobs the current rules reject, rather than showing them as closed: ones
+    # still posted (in raw) but not kept, and ones from employers no longer polled.
+    kept_urls = {j.url for j in kept}  # pre-dedup, so merged duplicates still count
+    raw_urls = {j.url for j in raw}
+    polled = {e["name"] for e in ats.employers()}
+    store = [
+        j
+        for j in store
+        if (j.url in kept_urls or j.url not in raw_urls)
+        and (j.source not in ats.COLLECTORS or j.company in polled)
+    ]
     merged = pipeline.merge(store, unique, today, sources_run)
     log.info(
         "merge: store %d + fresh %d -> %d (%d closed)",

@@ -1,8 +1,9 @@
 # Marine Science Jobs
 
-Entry-level, full-time marine science jobs (bachelor's degree, about one year of experience),
-plus related roles a marine science graduate can get (GIS, environmental, water quality, wildlife,
-conservation), collected daily. Jobs that require an MS/PhD, 3+ years of experience, or a senior title are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
+Entry-level, full-time jobs for people with a marine science or related bachelor's degree
+(about one year of experience): marine science roles plus related ones a graduate can get (GIS, environmental, water quality, wildlife,
+conservation), collected daily. Jobs that require an MS/PhD, 3+ years of experience, a senior title, or a different
+qualification (engineering, software, licensed ship crew, galley, business roles) are left out, and so are postings with scam red flags (chat-app interviews, personal email contacts, fees or check deposits).
 Jobs are US-based or remote; on-site jobs outside the US are left out, and so are remote jobs abroad
 that list pay under about $40k a year.
 Each job is tagged with one subfield: marine biology, oceanography, fisheries, aquaculture,
@@ -30,7 +31,9 @@ SmartRecruiters, and Workday job boards of marine employers. Keyed sources appea
 local app ("Jobs by Adzuna" attribution is shown there). Jobs are marked closed when their source
 stops listing them and removed 60 days after a source last listed them.
 
-Legend: 🇺🇸 US citizenship or security clearance required · ⏳ temporary, seasonal, or term · 🔒 closed
+Legend: 🎓 posting asks for a marine science or related degree (biology, ecology, oceanography,
+environmental science, and similar) · 🇺🇸 US citizenship or security clearance required ·
+⏳ temporary, seasonal, or term · 🔒 closed
 
 ## License
 

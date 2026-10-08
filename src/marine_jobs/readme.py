@@ -9,7 +9,7 @@ from marine_jobs.models import Job
 from marine_jobs.pipeline import sort_newest
 
 START, END = "<!-- JOBS:START -->", "<!-- JOBS:END -->"
-TAG_EMOJI = {"us-citizen": "🇺🇸", "temp": "⏳"}
+TAG_EMOJI = {"us-citizen": "🇺🇸", "temp": "⏳", "degree-fit": "🎓"}
 HEADER = "| Company | Role | Location | Subfield | Tags | Apply | Posted |\n|---|---|---|---|---|---|---|"
 
 

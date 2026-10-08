@@ -44,16 +44,22 @@ ADJACENT_TITLE_RE = re.compile(
     r"field (?:tech\w*|crew|assistant)|nepa|sustainability|climate)\b",
     re.IGNORECASE,
 )
-# Adjacent-title matches that need a different degree (archaeology, engineering) or are safety roles.
+# Adjacent-title matches that are safety, mechanic, or lab-biology roles.
 ADJACENT_EXCLUDE_RE = re.compile(
-    r"\b(?:archaeolog\w*|paleontolog\w*|health (?:and|&) safety|ehs|engineer\w*|"
-    r"mechanic|computational|molecular)\b",
+    r"\b(?:health (?:and|&) safety|ehs|mechanic|computational|molecular)\b",
     re.IGNORECASE,
 )
-# Business roles that "marine"/"ocean" words pull in (marine insurance, ocean freight, sales).
+# Roles a marine-science bachelor's does not qualify for, even at ocean employers: business
+# (marine insurance, ocean freight, sales), engineering and software, ship's crew and galley
+# (licensed), hospitality and warehouse, plant operators, land surveying, other degrees
+# (archaeology, chemistry), and internships, which are usually for current students.
 NON_SCIENCE_TITLE_RE = re.compile(
     r"\b(?:sales|adjuster|underwriter|insurance|freight|import|export|tutor|legal|attorney|"
-    r"paralegal|philanthropy|fundrais\w*|accountant|recruiter)\b",
+    r"paralegal|philanthropy|fundrais\w*|accountant|receivable|recruiter|engineer\w*|"
+    r"developer|software|programmer|chef|cook|galley|(?<!land )steward|deckhand|mate|seafarer|oiler|"
+    r"qmed|licensed|host|driver|packer|facilities|logistics|composite|membrane|wastewater|"
+    r"pump|filtration|law enforcement|archaeolog\w*|paleontolog\w*|chemist|survey field tech\w*|"
+    r"distribution|adjunct|intern|internship|captain|advisor|cultural)\b",
     re.IGNORECASE,
 )
 # Broad aggregators whose postings come from any industry: match relevance on the title only.
@@ -100,7 +106,8 @@ YEARS_RE = re.compile(
 SENIOR_TITLE_RE = re.compile(
     r"\b(?:senior|supervisory|sr\b\.?|lead|principal|manager|director|head of|chief|"
     r"vice president|vp|staff (?:scientist|engineer)|managing|partner|leader|professor|"
-    r"faculty|instructor|lecturer|fellow|volunteer|work study)\b|\bpost-?doc",
+    r"faculty|instructor|lecturer|fellow|volunteer|work study|supervisor|curator|expert|"
+    r"intermediate|middle)\b|\bpost-?doc",
     re.IGNORECASE,
 )
 
@@ -108,6 +115,16 @@ TEMP_RE = re.compile(
     rf"\b(?:seasonal|temporary|limited[- ]term|fixed[- ]term|term[- ]limited|"
     r"term (?:position|appointment|employee|role|job)|not[- ]to[- ]exceed|"
     rf"contract (?:position|role|job|employee|basis)|contractor|{_NUM}[- ]months?\b)",
+    re.IGNORECASE,
+)
+# Postings that name a degree a marine-science graduate holds or that counts as "related".
+DEGREE_FIT_RE = re.compile(
+    r"(?:\b(?:bachelor\w*|undergraduate|degree)\b|\bb\.?s\.?c?(?![a-z])|\bb\.?a\.?(?![a-z]))"
+    r"[^.;\n]{0,80}?\b(?:"
+    r"marine (?:science|biology|ecology)|ocean(?:ography| science)|oceanograph\w*|fisheries|"
+    r"aquatic (?:science|biology|ecology)|biolog(?:y|ical sciences?)|ecology|"
+    r"environmental (?:science|studies)|natural resources?|wildlife|zoology|geography|"
+    r"earth sciences?|geosciences?)",
     re.IGNORECASE,
 )
 CITIZEN_RE = re.compile(
@@ -375,6 +392,9 @@ def _non_us(place: str) -> bool:
     return foreign
 
 
+CJK_RE = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af]")
+
+
 PAY_FLOOR_USD = 40_000
 FX_TO_USD = {
     "$": 1.0,
@@ -405,7 +425,9 @@ def _annual_pay(text: str) -> float | None:
 
 def _location_ok(job: Job) -> bool:
     """US jobs (or unknown location) always; elsewhere only remote, and not below the pay floor."""
-    if not all(_non_us(part) for part in job.location.split(";")):
+    # Some boards hide the country in the title ("Intern Hiring - China", Japanese titles).
+    foreign_title = NON_US_RE.search(job.title) or CJK_RE.search(job.title)
+    if not foreign_title and not all(_non_us(part) for part in job.location.split(";")):
         return True
     if not (job.remote or "remote" in job.location.lower()):
         return False
@@ -436,7 +458,11 @@ def classify(jobs: list[Job]) -> list[Job]:
         text = _text(job)
         tags = [
             t
-            for t, rx in (("temp", TEMP_RE), ("us-citizen", CITIZEN_RE))
+            for t, rx in (
+                ("temp", TEMP_RE),
+                ("us-citizen", CITIZEN_RE),
+                ("degree-fit", DEGREE_FIT_RE),
+            )
             if rx.search(text)
         ]
         merged = sorted(set(job.tags) | set(tags))  # keep tags a source set itself
