@@ -45,8 +45,11 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 <!-- JOBS:START -->
 | Company | Role | Location | Subfield | Tags | Apply | Posted |
 |---|---|---|---|---|---|---|
-| Fugro | Satellite Positioning Support Specialist - Marine | Houston, Texas | marine data & GIS |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Satellite-Positioning-Support-Specialist---Marine_R0031921) | 2026-10-14 |
-| Fugro | Marine Technician I - Marine | Lafayette, Louisiana | ocean engineering & technology |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Lafayette-Louisiana/Marine-Technician-I---Marine_R0032039) | 2026-10-14 |
+| Fugro | Satellite Positioning Support Specialist - Marine | Houston, Texas | marine data & GIS |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Satellite-Positioning-Support-Specialist---Marine_R0031921) | 2026-10-15 |
+| WHOI | Wiper R/V Atlantis | Iselin Dock Building Ship Operations | ocean engineering & technology | ⏳ | [Apply](https://whoi.wd5.myworkdayjobs.com/WHOI-External/job/Iselin-Dock-Building-Ship-Operations/Wiper-R-V-Atlantis_JR100657) | 2026-10-15 |
+| Fugro | Marine Technician I - Marine | Lafayette, Louisiana | ocean engineering & technology |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Lafayette-Louisiana/Marine-Technician-I---Marine_R0032039) | 2026-10-15 |
+| CUC Corporate Brand | GIS Specialist I | Remote - United States | marine data & GIS |  | [Apply](https://himalayas.app/companies/cuc-corporate-brand/jobs/gis-specialist-i) | 2026-10-14 |
+| The Nature Conservancy | Especialista Gestão Projetos I - Global Conservation Strategy Analyst | Remote, Brazil | conservation & policy |  | [Apply](https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Remote-Brazil/Especialista-Gesto-Projetos-I----Global-Conservation-Strategy-Analyst_JR104146) | 2026-10-14 |
 | The Nature Conservancy | Aquaculture Associate | St. Croix, USVI | coastal & estuarine ecology |  | [Apply](https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/St-Croix-USVI/Aquaculture-Associate_JR104139) | 2026-10-14 |
 | National Audubon Society | Habitat Technician | Audubon South Dakota - Remote | marine biology | 🎓 | [Apply](https://audubon.wd503.myworkdayjobs.com/Audubon/job/Audubon-South-Dakota---Remote/Habitat-Technician_JR1235) | 2026-10-14 |
 | ICF | Environmental Health Scientist (Atlanta Client Site) | Atlanta, GA | environmental consulting | 🎓 🇺🇸 | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Atlanta-GA/Environmental-Health-Scientist--Atlanta-Client-Site-_R2603484-1) | 2026-10-13 |
@@ -101,8 +104,8 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | Cooke Aquaculture Inc. | aquaculture technician | Saint John (NB) | aquaculture |  | 🔒 | 2026-10-02 |
 | EngiFlex | Functioneel Analist GIS & ESRI (Freelance mogelijk) | Remote - Belgium | marine data & GIS |  | 🔒 | 2026-10-02 |
 | Desgagnés Marine St-Laurent inc. | second engineer | Québec (QC) | ocean engineering & technology |  | 🔒 | 2026-10-02 |
-| The Nature Conservancy | Bird Conservation Assistant, Palmyra Atoll | Palmyra, Hawaii | conservation & policy | ⏳ | [Apply](https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Palmyra-Hawaii/Bird-Conservation-Assistant--Palmyra-Atoll_JR104053) | 2026-10-02 |
-| County of Sonoma | Water Agency Environmental Specialist |  | other |  | 🔒 | 2026-10-02 |
+| The Nature Conservancy | Bird Conservation Assistant, Palmyra Atoll | Palmyra, Hawaii | conservation & policy | ⏳ | 🔒 | 2026-10-02 |
+| County of Sonoma | Water Agency Environmental Specialist |  | other |  | [Apply](https://www.conservationjobboard.com/job-listing-water-agency-environmental-specialist-santa-rosa-california/3917628633) | 2026-10-02 |
 | Lynker Corporation | Environmental Data Scientist | Remote - United States | marine data & GIS |  | 🔒 | 2026-10-02 |
 | American Farmland Trust | Illinois Agricultural and Conservation Technical Specialist |  | conservation & policy |  | [Apply](https://www.conservationjobboard.com/job-listing-illinois-agricultural-and-conservation-technical-specialist-effingham-illinois/2950498963) | 2026-10-01 |
 | Point Blue Conservation Science | Western Snowy Plover Conservation Technician |  | conservation & policy |  | [Apply](https://www.conservationjobboard.com/job-listing-western-snowy-plover-conservation-technician-monterey-california/1886315675) | 2026-10-01 |
@@ -141,25 +144,25 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | Southeastern Grasslands Institute at Austin Peay State University | Field Technician |  | environmental consulting |  | 🔒 | 2026-09-22 |
 | Pheasants Forever, Inc., and Quail Forever | Habitat Specialist I (Conservation Technician) |  | conservation & policy |  | 🔒 | 2026-09-21 |
 | Pheasants Forever, Inc., and Quail Forever | Range and Wildlife Biologist I, II, or III |  | marine biology |  | 🔒 | 2026-09-21 |
-| ProSidian Consulting, LLC | GIS Specialist (Technician – Levels 1 and 2) | Remote - United States | marine data & GIS | ⏳ 🇺🇸 | [Apply](https://himalayas.app/companies/prosidian-consulting-llc/jobs/gis-specialist-technician-levels-1-and-2) | 2026-09-19 |
+| ProSidian Consulting, LLC | GIS Specialist (Technician – Levels 1 and 2) | Remote - United States | marine data & GIS | ⏳ 🇺🇸 | 🔒 | 2026-09-19 |
 | ProSidian Consulting, LLC | Field Technician | Remote - United States | environmental consulting |  | [Apply](https://himalayas.app/companies/prosidian-consulting-llc/jobs/field-technician) | 2026-09-18 |
 | Schoolcraft Conservation District | Conservation Technician |  | conservation & policy |  | [Apply](https://www.conservationjobboard.com/job-listing-conservation-technician-manistique-michigan/7739142723) | 2026-09-17 |
 | Idaho Department of Fish and Game | GIS Analyst III |  | marine data & GIS |  | 🔒 | 2026-09-17 |
 | cFocus Software Incorporated | Jr. Geospatial Analyst - DHS | Remote - United States | marine data & GIS | 🎓 | [Apply](https://himalayas.app/companies/cfocus-software-incorporated/jobs/jr-geospatial-analyst-dhs-881749494) | 2026-09-16 |
 | The Nature Conservancy | SC Coast Burn Crew Member | North Charleston, South Carolina | coastal & estuarine ecology |  | [Apply](https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/North-Charleston-South-Carolina/SC-Coast-Burn-Crew-Member_JR103902) | 2026-09-16 |
+| ERM | Field Biologist (Field Based) | United States of America | marine biology | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Desert-Tortoise-Field-Biologist--Field-Based-_R00030299) | 2026-09-15 |
+| ERM | Field Biologist | United States of America | marine biology | 🎓 ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Field-Biologist_R00028758) | 2026-09-15 |
 | Conservation Corps MN/IA | Field Crew Member |  | conservation & policy |  | [Apply](https://www.conservationjobboard.com/job-listing-field-crew-member-des-moines-iowa/8744490664) | 2026-09-15 |
-| ERM | Field Biologist (Field Based) | United States of America | marine biology | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Desert-Tortoise-Field-Biologist--Field-Based-_R00030299) | 2026-09-14 |
-| ERM | Field Biologist | United States of America | marine biology | 🎓 ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Field-Biologist_R00028758) | 2026-09-14 |
-| ERM | Desert Tortoise Field Biologists (Field Based) | Elko, Nevada | marine biology | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Elko-Nevada/Desert-Tortoise-Field-Biologists--Field-Based-_R00024057) | 2026-09-14 |
-| ERM | Field Biologist (Field Based) | Walnut Creek, California | environmental consulting | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Field-Biologist--Field-Based-_R00022787) | 2026-09-14 |
-| Verdantas | Field Technician | United States of America | environmental consulting |  | [Apply](https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Easton-MA/Field-Technician_R-101180) | 2026-09-14 |
+| ERM | Desert Tortoise Field Biologists (Field Based) | Elko, Nevada | marine biology | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Elko-Nevada/Desert-Tortoise-Field-Biologists--Field-Based-_R00024057) | 2026-09-15 |
+| ERM | Field Biologist (Field Based) | Walnut Creek, California | environmental consulting | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Field-Biologist--Field-Based-_R00022787) | 2026-09-15 |
+| Verdantas | Field Technician | United States of America | environmental consulting |  | [Apply](https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Easton-MA/Field-Technician_R-101180) | 2026-09-15 |
+| ICF | Wetland Biologist | United States of America | environmental consulting | 🎓 | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Austin-TX/Wetland-Biologist_R2603039) | 2026-09-15 |
+| William & Mary (VIMS) | Environmental Review & Advisory Specialist | Posting Location - VIMS Gloucester | conservation & policy | 🎓 | [Apply](https://williammary.wd12.myworkdayjobs.com/WM/job/Posting-Location---VIMS-Gloucester/Environmental-Review---Advisory-Specialist_JR101929) | 2026-09-15 |
+| ERM | Field Biologist | Irvine, California | marine biology | 🎓 ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Field-Biologist_R00028757) | 2026-09-15 |
+| University of New Hampshire | Shoals Marine Laboratory - Teaching Assistant (high school) | University of New Hampshire – Main Campus | education & aquarium |  | [Apply](https://usnh.wd5.myworkdayjobs.com/Careers/job/University-of-New-Hampshire--Main-Campus/Shoals-Marine-Laboratory---Teaching-Assistant--high-school-_JR7471) | 2026-09-15 |
+| ICF | Environmental Construction Coordinator | Olympia, WA | environmental consulting | 🎓 ⏳ | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Olympia-WA/Environmental-Representative-Land-Liaison_R2602596-1) | 2026-09-15 |
 | Nexus Environmental Consultants, Inc. | Seasonal Biologist/Environmental Scientist |  | environmental consulting | ⏳ | [Apply](https://www.conservationjobboard.com/job-listing-seasonal-biologistenvironmental-scientist-elko-or-reno-nevada/9389209494) | 2026-09-14 |
-| ICF | Wetland Biologist | United States of America | environmental consulting | 🎓 | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Austin-TX/Wetland-Biologist_R2603039) | 2026-09-14 |
-| ERM | Consultant, Environmental Permitting Specialist, FERC Generalist | United States of America | environmental consulting |  | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Houston-Texas/Job-Posting-Title-Consultant--Environmental-Permitting-Specialist--FERC-Generalist_R00030648-1) | 2026-09-14 |
-| William & Mary (VIMS) | Environmental Review & Advisory Specialist | Posting Location - VIMS Gloucester | conservation & policy | 🎓 | [Apply](https://williammary.wd12.myworkdayjobs.com/WM/job/Posting-Location---VIMS-Gloucester/Environmental-Review---Advisory-Specialist_JR101929) | 2026-09-14 |
-| ERM | Field Biologist | Irvine, California | marine biology | 🎓 ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Field-Biologist_R00028757) | 2026-09-14 |
-| University of New Hampshire | Shoals Marine Laboratory - Teaching Assistant (high school) | University of New Hampshire – Main Campus | education & aquarium |  | [Apply](https://usnh.wd5.myworkdayjobs.com/Careers/job/University-of-New-Hampshire--Main-Campus/Shoals-Marine-Laboratory---Teaching-Assistant--high-school-_JR7471) | 2026-09-14 |
-| ICF | Environmental Construction Coordinator | Olympia, WA | environmental consulting | 🎓 ⏳ | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Olympia-WA/Environmental-Representative-Land-Liaison_R2602596-1) | 2026-09-14 |
+| ERM | Consultant, Environmental Permitting Specialist, FERC Generalist | United States of America | environmental consulting |  | 🔒 | 2026-09-14 |
 | ERM | Biologist - Remote Desktop Analyst Coordinator (Field Based) | Irvine, California | marine data & GIS | ⏳ | 🔒 | 2026-09-13 |
 | Bedrock Ocean | Hydrographer/Geophysicist | Remote | marine data & GIS |  | [Apply](https://jobs.ashbyhq.com/bedrockocean/80714609-71a3-4de6-8728-71869e4a6257) | 2026-09-13 |
 | ICF | Wildlife Biologist On-Call Southern California | Los Angeles, CA | marine biology | 🎓 ⏳ | 🔒 | 2026-09-13 |
@@ -169,7 +172,7 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | Teatown Lake Reservation | Environmental Educator (Bilingual) |  | education & aquarium |  | 🔒 | 2026-09-08 |
 | ERM | Environmental Compliance Consultant (Field Based) | United States of America | conservation & policy | 🎓 ⏳ | 🔒 | 2026-09-08 |
 | Verdantas | Data Analytics and GIS Intern | Syracuse NY | marine data & GIS |  | 🔒 | 2026-09-07 |
-| Sun King | GIS Specialist | Remote - Anywhere | marine data & GIS | 🎓 | [Apply](https://himalayas.app/companies/sun-king/jobs/gis-specialist-817276263) | 2026-09-06 |
+| Sun King | GIS Specialist | Remote - Anywhere | marine data & GIS | 🎓 | 🔒 | 2026-09-06 |
 | AECOM | Authorized Desert Tortoise Biologist - (on-call) | Remote - United States | environmental consulting |  | [Apply](https://himalayas.app/companies/aecom/jobs/authorized-desert-tortoise-biologist-on-call) | 2026-08-31 |
 | Woolpert | Hydrographic Survey Specialist - San Rafael, CA | San Rafael, CA | environmental consulting | 🎓 | [Apply](https://job-boards.greenhouse.io/woolpert/jobs/4310128009) | 2026-08-25 |
 | Woolpert | Remote Sensing Specialist | Denver, CO | marine data & GIS | 🇺🇸 | [Apply](https://job-boards.greenhouse.io/woolpert/jobs/4374268009) | 2026-08-25 |
