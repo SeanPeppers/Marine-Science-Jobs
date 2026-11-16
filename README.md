@@ -45,6 +45,7 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 <!-- JOBS:START -->
 | Company | Role | Location | Subfield | Tags | Apply | Posted |
 |---|---|---|---|---|---|---|
+| World Fuel Services | Maintenance Field Technician | Remote - United States | environmental consulting |  | [Apply](https://himalayas.app/companies/world-fuel-services/jobs/maintenance-field-technician) | 2026-11-16 |
 | Fugro | Satellite Positioning Support Specialist - Marine | Houston, Texas | marine data & GIS |  | [Apply](https://fugro.wd3.myworkdayjobs.com/Careers/job/Houston-Texas/Satellite-Positioning-Support-Specialist---Marine_R0031921) | 2026-11-15 |
 | ICF | Field Ecologist or Biologist – Part-time (hourly) | Missouri Field Office (MO66) | marine biology | 🎓 ⏳ | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Missouri-Field-Office-MO66/Field-Ecologist-or-Biologist---Part-time--hourly-_R2603859) | 2026-11-13 |
 | Saildrone | Automated Ply Cutter Operator - Composites | Alameda, California, United States | ocean engineering & technology |  | [Apply](https://www.saildrone.com/careers/available-jobs?gh_jid=4478702009) | 2026-11-13 |
@@ -90,12 +91,12 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | Woolpert | Hydrographic Surveyor | Port Orchard, WA | environmental consulting | 🎓 | [Apply](https://job-boards.greenhouse.io/woolpert/jobs/4371883009) | 2026-11-06 |
 | The Nature Conservancy | Aquatic Restoration and Resiliency Coordinator | Pulaski, New York | marine biology | ⏳ | [Apply](https://nature.wd108.myworkdayjobs.com/ExternalCareers/job/Pulaski-New-York/Aquatic-Restoration-and-Resiliency-Coordinator_JR104154) | 2026-11-06 |
 |  | BLUE TECH Startup Spotlight |  | other |  | [Apply](https://ecomagazine.com/in-depth/blue-tech-startup-spotlight-3/) | 2026-11-06 |
+| Pheasants Forever, Inc., and Quail Forever | Habitat Specialist I |  | other |  | [Apply](https://www.conservationjobboard.com/job-listing-habitat-specialist-i-crossville-tennessee/3355742821) | 2026-11-05 |
 | World Wildlife Fund | Environmental and Social Safeguards Officer - HCI | Brasília - DF, BR | environmental consulting |  | [Apply](https://jobs.smartrecruiters.com/WorldWildlifeFundInc1/744000159962049) | 2026-11-05 |
 | ICF | Energy and Climate Researcher (Entry Level, Summer 2027, Hybrid) | United States of America | oceanography | 🎓 | 🔒 | 2026-11-05 |
 | ICF | Energy and Climate Researcher | United States of America | marine data & GIS |  | 🔒 | 2026-11-05 |
 | Sierra Pacific Industries | Wildlife Biologist Aide (Martell, Tahoe, Sonora Districts) |  | marine biology |  | [Apply](https://www.conservationjobboard.com/job-listing-wildlife-biologist-aide-martell-tahoe-sonora-districts-sonora-california/4780932776) | 2026-11-05 |
 | World Wildlife Fund | Environmental and Social Safeguards Officer - HCI | Phnom Penh, Phnom Penh, KH | environmental consulting |  | [Apply](https://jobs.smartrecruiters.com/WorldWildlifeFundInc1/744000159961899) | 2026-11-05 |
-| Pheasants Forever, Inc., and Quail Forever | Habitat Specialist I (Seasonal) |  | other | ⏳ | [Apply](https://www.conservationjobboard.com/job-listing-habitat-specialist-i-seasonal-waynesboro-georgia/1272654920) | 2026-11-05 |
 | Pheasants Forever, Inc., and Quail Forever | Conservation Delivery Specialist |  | conservation & policy |  | [Apply](https://www.conservationjobboard.com/job-listing-conservation-deliver-specialist-red-hills-eco-region-kansas/7074909941) | 2026-11-05 |
 | Verdantas | Staff Ecologist | United States of America | environmental consulting | 🎓 | [Apply](https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Dublin-OH/Staff-Ecologist_R-101325-1) | 2026-11-04 |
 | University of New Hampshire | Avian Disease Ecology Post Graduate Assistant | University of New Hampshire – Main Campus | marine biology |  | [Apply](https://usnh.wd5.myworkdayjobs.com/Careers/job/University-of-New-Hampshire--Main-Campus/Avian-Disease-Ecology-Post-Graduate-Assistant_JR10535) | 2026-11-04 |
@@ -170,6 +171,7 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | Helyx | Esri Ireland Future Job Opportunities - GIS Contractor | Remote - Ireland | marine data & GIS | ⏳ 🇺🇸 | [Apply](https://himalayas.app/companies/helyx/jobs/esri-ireland-future-job-opportunities-gis-contractor) | 2026-10-19 |
 | Woodard & Curran | Entry-level Environmental Scientist | Duluth, GA | environmental consulting |  | 🔒 | 2026-10-19 |
 | Mano Lani LLC | GIS Analyst | Remote - United States | marine data & GIS | 🎓 | 🔒 | 2026-10-18 |
+| William & Mary (VIMS) | FL Black Rail Field Technician | Posting Location - William & Mary | environmental consulting | ⏳ | [Apply](https://williammary.wd12.myworkdayjobs.com/WM/job/Posting-Location---William--Mary/FL-Black-Rail-Field-Technician-1_JR102147) | 2026-10-17 |
 | ERM | Field Biologist (Field Based) | United States of America | marine biology | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Desert-Tortoise-Field-Biologist--Field-Based-_R00030299) | 2026-10-16 |
 | Verdantas | Environmental Scientist II | Orlando FL | environmental consulting | 🎓 | [Apply](https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Orlando-FL/Environmental-Scientist-II_R-101204) | 2026-10-16 |
 | ERM | Field Biologist | United States of America | marine biology | 🎓 ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Irvine-California/Field-Biologist_R00028758) | 2026-10-16 |
@@ -180,7 +182,6 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | ERM | Environmental Field Inspectors (Field Based) | United States of America | marine data & GIS | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Rolling-Meadows-Illinois/Environmental-Field-Inspectors--Field-Based-_R00032181) | 2026-10-16 |
 | ERM | Field Biologist (Field Based) | Walnut Creek, California | environmental consulting | ⏳ | [Apply](https://erm.wd3.myworkdayjobs.com/ERM_Careers/job/Walnut-Creek-California/Field-Biologist--Field-Based-_R00022787) | 2026-10-16 |
 | Leidos | GIS Technician | Remote - United States | marine data & GIS | ⏳ | [Apply](https://himalayas.app/companies/leidos/jobs/gis-technician-6426611165) | 2026-10-16 |
-| William & Mary (VIMS) | FL Black Rail Field Technician | Posting Location - William & Mary | environmental consulting | ⏳ | [Apply](https://williammary.wd12.myworkdayjobs.com/WM/job/Posting-Location---William--Mary/FL-Black-Rail-Field-Technician-1_JR102147) | 2026-10-16 |
 | The Nature Conservancy | Especialista Conservação I - Conservation Practitioner VI | Remote, Brazil | conservation & policy |  | 🔒 | 2026-10-16 |
 | The Nature Conservancy | Coastal Fire Practitioner and Land Steward | Perdido, Alabama | coastal & estuarine ecology | ⏳ | 🔒 | 2026-10-16 |
 | Verdantas | Field Technician | United States of America | environmental consulting |  | [Apply](https://verdantas.wd108.myworkdayjobs.com/Verdantas/job/Easton-MA/Field-Technician_R-101180) | 2026-10-16 |
@@ -189,10 +190,10 @@ Code is MIT licensed. Job listings belong to their publishers: `data/jobs.json` 
 | University of New Hampshire | Shoals Marine Laboratory - Teaching Assistant (high school) | University of New Hampshire – Main Campus | education & aquarium |  | [Apply](https://usnh.wd5.myworkdayjobs.com/Careers/job/University-of-New-Hampshire--Main-Campus/Shoals-Marine-Laboratory---Teaching-Assistant--high-school-_JR7471) | 2026-10-16 |
 | ICF | Environmental Construction Coordinator | Olympia, WA | environmental consulting | 🎓 ⏳ | [Apply](https://icf.wd5.myworkdayjobs.com/ICFExternal_Career_Site/job/Olympia-WA/Environmental-Representative-Land-Liaison_R2602596-1) | 2026-10-16 |
 | WHOI | Research Assistant II (Bioacoustics and Sensory Biology) | Onsite – Woods Hole, MA | ocean engineering & technology | 🎓 | 🔒 | 2026-10-15 |
-| Yakima Basin Fish and Wildlife Recovery Board | Recovery Coordinator |  | fisheries |  | [Apply](https://www.conservationjobboard.com/job-listing-recovery-coordinator-yakima-washington/6962897060) | 2026-10-15 |
+| Yakima Basin Fish and Wildlife Recovery Board | Recovery Coordinator |  | fisheries |  | 🔒 | 2026-10-15 |
 | James River Association | James River Association - Upper James Environmental Educator |  | education & aquarium |  | 🔒 | 2026-10-15 |
 | USA The Nature Conservancy | Especialista Gestão Projetos I - Global Conservation Strategy Analyst | Remote - Brazil | conservation & policy |  | 🔒 | 2026-10-15 |
-| Midwest Wetland Improvements | Project Based Wetland Scientist |  | coastal & estuarine ecology |  | [Apply](https://www.conservationjobboard.com/job-listing-project-based-wetland-scientist-victoria-minnesota/3854237577) | 2026-10-15 |
+| Midwest Wetland Improvements | Project Based Wetland Scientist |  | coastal & estuarine ecology |  | 🔒 | 2026-10-15 |
 | WHOI | Wiper R/V Atlantis | Iselin Dock Building Ship Operations | ocean engineering & technology | ⏳ | 🔒 | 2026-10-15 |
 | Oregon Dept. of State Lands | Wetland Ecologist |  | coastal & estuarine ecology |  | 🔒 | 2026-10-15 |
 | Texas Conservation Corps of American YouthWorks | Conservation and Disaster Response Crew Members and Leaders \| Austin, TX |  | conservation & policy |  | 🔒 | 2026-10-14 |
